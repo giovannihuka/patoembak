@@ -38,7 +38,7 @@ $(document).ready(function() {
                             "orderable": false
                         },
 						{"data": "activity_name"},
-                        {"data": "pastor_name"},
+                        {"data": "remarks"},
                         {"data": "tgl"},
 						{"data": "jam_mulai"},
 						{"data": "jam_selesai"},
