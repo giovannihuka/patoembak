@@ -23,7 +23,7 @@ application/logs/*
 
 ### My configuration ###
 /application/config/production/database.php
-/application/config/database.php
+#/application/config/database.php
 /application/sql/
 /harviacode/
 application/views/home_20191007.php
