@@ -1,0 +1,275 @@
+ Login Page */
+
+.login-page
+{
+    background: url('../../assets/dist/images/background_jakarta.jpg') no-repeat center center fixed, #abbbd6;
+    /* fallback for old browsers */
+    /*background: url('../../assets/dist/images/background_jakarta.jpg') no-repeat center center fixed, -webkit-linear-gradient(to left, #BC4328, #6785C1);*/
+    /* Chrome 10-25, Safari 5.1-6 */
+    /*background: url('../../assets/dist/images/background_jakarta.jpg') no-repeat center center fixed, linear-gradient(to left, #BC4328, #6785C1);*/
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /*background: linear-gradient(to top, #063968, #8eb6ff) no-repeat center center fixed;*/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.login-box-body
+{
+    border-radius: 10px;
+    /*border:2px solid rgba(255, 255, 0, 0.6);*/
+}
+
+.main-header .sidebar-toggle
+{
+    padding: 10px 15px 10px 15px;
+    font-size: 21px;
+}
+/*
+.footer
+{
+    position: relative !important;
+    margin-top: 10px !important;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin-top: -50px;
+}
+*/
+textarea
+{
+    resize: vertical;
+}
+
+div.ckeditor_val
+{
+    background-color: #eee;
+    border: 1px solid #ccc;
+    opacity: 1;
+    padding: 6px 12px;
+    box-sizing: border-box;
+    color: #555;
+}
+
+.resp-container {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
+}
+
+.resp-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /*max-width: 560px;*/
+    height: 100%;
+    /*height: auto;*/
+    border: 0;
+}
+
+.navbar-nav
+{
+    font-size: larger;
+}
+
+.navbar-nav>.user-menu>.dropdown-menu {
+/*    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    padding: 1px 0 0 0;
+    border-top-width: 0;*/
+    width: 180px;
+}
+
+.navbar-custom-title {
+    font-size: 20px; 
+    color: white; 
+    padding: 10px 15px 10px 15px; 
+    position: relative; 
+    display: none;
+}
+
+.navbar-custom-title,
+.navbar-custom-title:hover {
+    color: white;
+}
+
+.skin-black .navbar-custom-title {
+    color: black;
+}
+
+@media (max-width: 640px) {
+    .login-page {
+        background-image: none; 
+        background: #abbbd6;
+    }
+    .login-box-body
+    {
+        border-radius: 10px;
+        border: none;
+    }
+    .navbar
+    {
+        position: fixed;
+    }
+
+    .content-header
+    {
+        padding-top: 60px;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .login-page {
+        background-image: none;
+        background: #abbbd6;
+    }
+    .login-box-body
+    {
+        border-radius: 10px;
+        border: none;
+    }
+}
+
+@media (max-width: 767px)
+{
+    .left-side, .main-sidebar
+    {
+        padding-top: 50px;
+    }
+    .navbar-custom-title {
+        display: inline-block;
+    }
+    .form-group {
+        margin-bottom: 5px;
+    }
+    .form-group .label {
+        margin-bottom: 0px;
+    }
+}
+
+@media (max-width: 991px)
+{
+    .navbar-custom-menu>.navbar-nav>li>.dropdown-menu 
+    {
+        right: 0%;
+    }
+}
+
+/*@media (max-width: 1024px)
+{
+    .footer
+    {
+        position: relative !important;
+    }
+}*/
+
+/*@media (max-width: 767px)
+{
+.skin-red .main-header .navbar .dropdown-menu li a 
+    {
+        color: #000; 
+    }
+}*/
+
+/*
+ --- Scroll up button ----
+*/
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 60px; /* Place the button at the bottom of the page */
+    right: 20px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: #337ab7; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 14px; /* Increase font size */
+    /*opacity: 0.3;*/
+    padding: 5px 5px;
+}
+
+/*#myBtn:hover {*/
+    /*background-color: #337ab7;  Add a dark-grey background on hover */
+    /*opacity: 0.3;*/
+/*}*/
+
+/* -------- scroll btn -------- */
+
+/* 
+.navbar-default {
+  background-color: #529fc1;
+  border-color: #245e96;
+}
+.navbar-default .navbar-brand {
+  color: #dbdddd;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #ffffff;
+}
+.navbar-default .navbar-text {
+  color: #dbdddd;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #dbdddd;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #ffffff;
+  background-color: #245e96;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #ffffff;
+  background-color: #245e96;
+}
+.navbar-default .navbar-toggle {
+  border-color: #245e96;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #245e96;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #dbdddd;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #dbdddd;
+}
+.navbar-default .navbar-link {
+  color: #dbdddd;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #dbdddd;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffffff;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffffff;
+    background-color: #245e96;
+  }
+}
+
+----------------------------------------- 
