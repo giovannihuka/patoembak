@@ -22,7 +22,7 @@ application/logs/*
 /vendor/
 
 ### My configuration ###
-/application/config/production/database.php
+#/application/config/production/database.php
 #/application/config/database.php
 /application/sql/
 /harviacode/
