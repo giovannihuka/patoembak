@@ -96,10 +96,10 @@ $config['ci_bootstrap'] = array(
 		// 	'name'		=> 'Contract',
 		// 	'url'		=> 'contract',
 		// ),
-		'map' => array(
-			'name'		=> 'Cabang',
-			'url'		=> 'map',
-		),
+		// 'map' => array(
+		// 	'name'		=> 'Cabang',
+		// 	'url'		=> 'map',
+		// ),
 		'video' => array(
 			'name'		=> 'Videos',
 			'url'		=> 'video_list',

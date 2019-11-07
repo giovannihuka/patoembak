@@ -3,7 +3,7 @@
 <!-- <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> -->
 <div class="container"">
 
-<p><?php echo $scripture['nama_hari'] ?></p>  
+<!-- <p><?php echo $scripture['nama_hari'] ?></p>   -->
 
 <?php if ((count($scripture)>0) && (!$this->ion_auth->logged_in())) { ?>
 

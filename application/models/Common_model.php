@@ -403,9 +403,31 @@ class Common_model extends MY_Model
                 $return[$row['id']] = $row['status_name'];
             }
         }
-
         return $return;
+    }
 
+    /*
+    * Finance List
+    */
+    function finance_list()
+    {
+        $this->db->from('ref_others');
+        $this->db->where('categories','Finance');
+        $this->db->where('status_data','Aktif');
+        $this->db->order_by('id','asc');
+        $result = $this->db->get();
+
+        $return = array();
+        $return[0] = '-- Pilih Jenis Transaksi --';
+
+        if ($result->num_rows() >0)
+        {
+            foreach ($result->result_array() as $row) {
+                # code...
+                $return[$row['id']] = $row['value'];
+            }
+        }
+        return $return;
     }
 
     /*
