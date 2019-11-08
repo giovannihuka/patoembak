@@ -17,7 +17,6 @@
 				<?php echo $form->bs3_date('Tgl. Publikasi','publish_date','','','','Masukkan Tgl. Publikasi'); ?>
 				<?php echo $form->bs3_date('Tgl. Akhir Publikasi','end_date','','','','Masukkan Tgl. Akhir Publikasi'); ?>
 				<?php echo $form->bs3_text('Urutan','sequence_num','','','','Masukkan Urutan'); ?>
-				<?php echo $form->bs3_dropdown('Pengeluaran/Pemasukkan','fin_category',$finance_list,'','','Pilih Jenis Kategori'); ?>
 				<?php echo $form->bs3_text_hidden('Create Userid','create_userid'); ?>
 				<?php echo $form->bs3_text_hidden('Update Userid','update_userid'); ?>
 				<?php echo $form->bs3_text_hidden('Create Time','create_time'); ?>

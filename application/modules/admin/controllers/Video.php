@@ -185,7 +185,6 @@ class Video extends Admin_Controller
         }
 
         $this->mViewData['video'] = $this->Video_model->get_all();
-        $this->mViewData['finance_list'] = $this->common_ref->finance_list();
         $this->mPageTitle = 'Registrasi Video Gallery';
         $this->mViewData['form'] = $form;
         $this->render('video/videos_form');

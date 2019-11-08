@@ -3,8 +3,6 @@
 <!-- <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> -->
 <div class="container"">
 
-<!-- <p><?php echo $scripture['nama_hari'] ?></p>   -->
-
 <?php if ((count($scripture)>0) && (!$this->ion_auth->logged_in())) { ?>
 
 <div class="w3-panel w3-card w3-round-large w3-light-grey">
