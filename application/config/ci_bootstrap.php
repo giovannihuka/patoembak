@@ -125,7 +125,8 @@ $config['ci_bootstrap'] = array(
 	// Restricted pages
 	'page_auth' => array(
 		// 'contract'		=> array('assistant'),
-		// 'video_list'	=> array('member'),
+		// 'video_list'	=> array('internal'),
+		// 'login' => array('pengerja,internal'),
 	),
 
 	// Email config

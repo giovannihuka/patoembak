@@ -90,7 +90,7 @@
 
 
 <?php if ($this->ion_auth->logged_in()): ?>
-  <?php if ($this->ion_auth->in_group(array('pengerja'))) { ?>
+  <?php if ($this->ion_auth->in_group(array('internal'))) { ?>
 
 <?php if (count($bday_list)>0) { ?>
   <div class="w3-card-4 w3-round-large">

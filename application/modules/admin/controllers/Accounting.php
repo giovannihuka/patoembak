@@ -188,6 +188,20 @@ class Accounting extends Admin_Controller
         xlsEOF();
         exit();
     }
+
+    public function get_categorlist()
+    {
+        $province_id = $this->input->post('province_id');
+        if ($province_id) {
+            $result = $this->common_ref->regency_list($province_id);
+        } else {
+            $result = $this->common_ref->regency_list('0');
+        }
+        $retval = $this->form_builder->create_form()->bs3_dropdown('Kabupaten','ref_regencies',$result); 
+        echo $retval;
+        //echo json_encode($result);
+    }
+
     public function create()
     {
         $form = $this->form_builder->create_form('',false,array('autocomplete'=>'off'));
