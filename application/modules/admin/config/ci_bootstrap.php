@@ -141,6 +141,15 @@ $config['ci_bootstrap'] = array(
 				'Registrasi Keluarga'	=> 'familie/create',
 			)
 		),	
+		'accounting' => array(
+			'name'		=> 'Keuangan',
+			'url'		=> 'accounting',
+			'icon'		=> 'fa fa-money',
+			'children'	=> array(
+				'Kategori'				=> 'ref_acccategorie',
+				'Transaksi Keuangan' 	=> 'accounting',
+			),
+		),
 		'admin'=> array(
 			'name'		=> 'Konfigurasi Sistem',
 			'url'		=> 'admin',

@@ -1005,4 +1005,112 @@ $config = array(
             ),
         ),
 
+    'accounting/create' => array(
+            array(
+                'field'      => 'in_out',
+                'label'      => 'Pemasukan / Pengeluaran',
+                'rules'      => 'trim|required|numeric',
+            ),
+            array(
+                'field'      => 'category_id',
+                'label'      => 'Jenis Pembayaran',
+                'rules'      => 'trim|required|numeric',
+            ),
+            array(
+                'field'      => 'activity_id',
+                'label'      => 'Nama Aktifitas',
+                'rules'      => 'trim|required|numeric',
+            ),
+            array(
+                'field'      => 'activity_date',
+                'label'      => 'Tanggal Aktifitas',
+                'rules'      => 'trim|required',
+            ),
+            array(
+                'field'      => 'amount',
+                'label'      => 'Jumlah',
+                'rules'      => 'trim|required|numeric',
+            ),
+            array(
+                'field'      => 'description',
+                'label'      => 'Keterangan',
+                'rules'      => 'trim|required',
+            ),
+            array(
+                'field'      => 'status_data',
+                'label'      => 'Status Data',
+                'rules'      => 'trim|required',
+            ),
+        ),
+
+
+    'accounting/update' => array(
+            array(
+                'field'      => 'in_out',
+                'label'      => 'Pemasukan / Pengeluaran',
+                'rules'      => 'trim|required|numeric',
+            ),
+            array(
+                'field'      => 'category_id',
+                'label'      => 'Jenis Pembayaran',
+                'rules'      => 'trim|required|numeric',
+            ),
+            array(
+                'field'      => 'activity_id',
+                'label'      => 'Nama Aktifitas',
+                'rules'      => 'trim|required|numeric',
+            ),
+            array(
+                'field'      => 'activity_date',
+                'label'      => 'Tanggal Aktifitas',
+                'rules'      => 'trim|required',
+            ),
+            array(
+                'field'      => 'amount',
+                'label'      => 'Jumlah',
+                'rules'      => 'trim|required|numeric',
+            ),
+            array(
+                'field'      => 'description',
+                'label'      => 'Keterangan',
+                'rules'      => 'trim|required',
+            ),
+            array(
+                'field'      => 'status_data',
+                'label'      => 'Status Data',
+                'rules'      => 'trim|required',
+            ),
+        ),
+
+    'ref_acccategorie/create' => array(
+            array(
+                'field'      => 'in_outid',
+                'label'      => 'Income/Expense',
+                'rules'      => 'trim|required|numeric',
+            ),
+            array(
+                'field'      => 'category_name',
+                'label'      => 'Kategori',
+                'rules'      => 'trim|required|is_unique[ref_acccategories.category_name]',
+            ),
+        ),
+
+
+    'ref_acccategorie/update' => array(
+            array(
+                'field'      => 'in_outid',
+                'label'      => 'Income/Expense',
+                'rules'      => 'trim|required|numeric',
+            ),
+            array(
+                'field'      => 'category_name',
+                'label'      => 'Kategori',
+                'rules'      => 'trim|required|is_unique[ref_acccategories.category_name]',
+            ),
+            array(
+                'field'      => 'status_data',
+                'label'      => 'Status Data',
+                'rules'      => 'trim|required',
+            ),
+        ),
 );

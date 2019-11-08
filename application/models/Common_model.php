@@ -409,10 +409,32 @@ class Common_model extends MY_Model
     /*
     * Finance List
     */
-    function finance_list()
+    function accounting_list()
+    {
+        $this->db->from('ref_accountings');
+        $this->db->order_by('id','asc');
+        $result = $this->db->get();
+
+        $return = array();
+        $return[0] = '-- Pemasukkan / Pengeluaran --';
+
+        if ($result->num_rows() >0)
+        {
+            foreach ($result->result_array() as $row) {
+                # code...
+                $return[$row['id']] = $row['reference_name'];
+            }
+        }
+        return $return;
+    }
+
+    /*
+    * Type of Accounting Transaction List
+    */
+    function payment_list()
     {
         $this->db->from('ref_others');
-        $this->db->where('categories','Finance');
+        $this->db->where('categories','Jenis Transaksi Pembayaran');
         $this->db->where('status_data','Aktif');
         $this->db->order_by('id','asc');
         $result = $this->db->get();
