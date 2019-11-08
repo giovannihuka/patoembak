@@ -69,3 +69,4 @@ GitHub.sublime-settings
 
 # End of https://www.gitignore.io/api/codeigniter,sublimetext
 application/config/database.php
+application/config/database.php
