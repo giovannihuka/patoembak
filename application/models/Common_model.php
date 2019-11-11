@@ -564,7 +564,7 @@ class Common_model extends MY_Model
         // $this->db->where('YEARWEEK(a.activity_date, 1) = YEARWEEK(CURDATE(), 1)');
         $this->db->where('MONTH(a.activity_date) = MONTH(CURRENT_DATE())');
         // $this->db->where('a.activity_date >= CURDATE()');
-        $this->db->order_by("a.activity_date, a.ref_activityid asc");
+        $this->db->order_by("a.activity_date desc, a.ref_activityid asc");
         $result = $this->db->get();
 
         return $result->result_array();        
