@@ -104,8 +104,11 @@ class Activitie extends Admin_Controller
                 $data = array (
 
 					'ref_activityid' => $row->ref_activityid,
-					'time_start' => $row->time_start,
-					'time_end' => $row->time_end,
+                    'activity_name' => $row->activity_name,
+                    'tgl' => $row->tgl,
+                    'remarks' => $row->remarks,
+					'time_start' => $row->jam_mulai,
+					'time_end' => $row->jam_selesai,
 					'status_data' => $row->status_data,
 
                 );

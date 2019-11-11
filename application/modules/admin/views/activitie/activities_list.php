@@ -19,13 +19,13 @@
             <thead>
                 <tr>
                     <th width="45px">No</th>
-		    <th>Nama Kegiatan</th>
-            <th>Pelayan Firman</th>
-            <th>Tgl. Kegiatan</th>
-		    <th>Mulai Kegiatan</th>
-		    <th>Selesai Kegiatan</th>
-		    <th>Status Data</th>
-		    <th width="80px">Aksi</th>
+        		    <th width="100px">Nama Kegiatan</th>
+                    <th width="150px">Keterangan</th>
+                    <th>Tgl. Kegiatan</th>
+        		    <th width="45px">Mulai Kegiatan</th>
+        		    <th width="45px">Selesai Kegiatan</th>
+        		    <th>Status Data</th>
+        		    <th width="80px">Aksi</th>
                 </tr>
             </thead>
                     </table>

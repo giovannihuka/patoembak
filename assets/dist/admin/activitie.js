@@ -38,7 +38,9 @@ $(document).ready(function() {
                             "orderable": false
                         },
 						{"data": "activity_name"},
-                        {"data": "remarks"},
+                        {
+                            "data": "remarks"
+                        },
                         {"data": "tgl"},
 						{"data": "jam_mulai"},
 						{"data": "jam_selesai"},

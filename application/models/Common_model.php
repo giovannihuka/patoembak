@@ -545,7 +545,7 @@ class Common_model extends MY_Model
             date_format(a.activity_date,"%d") today_date,
             date_format(a.activity_date,"%d %M %Y") tgl,
             case DAYOFWEEK(a.activity_date)
-                 WHEN 1 THEN "Minggu"
+                WHEN 1 THEN "Minggu"
                 WHEN 2 THEN "Senin"
                 WHEN 3 THEN "Selasa"
                 WHEN 4 THEN "Rabu"
@@ -555,6 +555,8 @@ class Common_model extends MY_Model
             END AS "day_name",
             time_format(a.time_start,"%H:%i") jam_mulai,
             time_format(a.time_end,"%H:%i") jam_selesai,
+            date_format(a.activity_date,"%d") ddt,
+            date_format(a.activity_date,"%b") as mot,
             a.remarks');
         $this->db->from('activities a');
         $this->db->join('ref_activities b','b.id = a.ref_activityid','left');

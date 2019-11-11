@@ -39,7 +39,6 @@ class Individual_model extends MY_Model
         return $this->datatables->generate();
     }
 
-
     // get all
     function get_all()
     {
