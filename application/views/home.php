@@ -168,24 +168,21 @@
 
         } elseif ($row['today_date'] < date('d')) {
           echo '
+
             <div class="w3-panel" style="padding:0px">
-              <div class="w3-col m12">
-                  <div class="w3-col s2">
-                      <div class="w3-col s12 w3-gray" style="height:100px;">
-                        <h2 class="box-title" style="font-weight: bold; margin-bottom: 0px; margin-top: 20px; text-align: center;">'.$row['ddt'].'</h2>
-                        <h5 class="box-title" style="font-weight: bold; margin-top: 0px; text-align: center;">'.$row['mot'].'</h5>
-                      </div>
-                    </div>
-                  <div class="w3-col s10">
-                      <div class="w3-col s12 w3-gray" style="height:40px;">
-                        <h5 class="box-title" style="font-weight:bold; margin-top: 5px; text-align: center;">'.$row['activity_name'].'
-                        </h5>
-                      </div>
-                      <div class="w3-col s8 w3-gray"  style="height:60px; text-align: left; padding-left: 5px;">'.$row['remarks'].'</div>
-                      <div class="w3-col s4 w3-gray"  style="height:60px; text-align: right; padding-right: 5px;">'.$row['jam_mulai'].'-'.$row['jam_selesai'].'</div>
-                    </div>
+              <div class="w3-col m12 w3-gray">
+                <div class="w3-col s3">
+                    <h5 class="box-title" style="text-align: center;">'.$row['ddt'].' '.$row['mot'].'</h5>
+                </div> 
+                <div class="w3-col s5">
+                    <h5 class="box-title">'.$row['activity_name'].'</h5>
+                </div>
+                <div class="w3-col s4">
+                    <h5 class="box-title" style="text-align: right; padding-right: 5px;">'.$row['jam_mulai'].'-'.$row['jam_selesai'].'</h5>
+                </div>
               </div>
             </div>
+
           ';  
         } else {
           echo '
