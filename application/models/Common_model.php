@@ -538,7 +538,7 @@ class Common_model extends MY_Model
     }
 
     /* Jadwal Kegiatan */
-    function schedule_list()
+    function schedule_list($site_info)
     {
         $this->db->select(' a.id, a.ref_activityid, b.activity_name, 
 
@@ -561,9 +561,13 @@ class Common_model extends MY_Model
         $this->db->from('activities a');
         $this->db->join('ref_activities b','b.id = a.ref_activityid','left');
         $this->db->where('a.status_data = "Aktif"');
-        $this->db->where('YEARWEEK(a.activity_date, 1) = YEARWEEK(CURDATE(), 1)');
-        // $this->db->where('MONTH(a.activity_date) = MONTH(CURRENT_DATE())');
-        $this->db->where('a.activity_date >= CURDATE()');
+        if ($site_info === 'nologin') {
+            $this->db->where('YEARWEEK(a.activity_date, 1) = YEARWEEK(CURDATE(), 1)');
+            $this->db->where('a.activity_date >= CURDATE()');
+        } // elseif ($site_info === 'login') {
+        //     $this->db->where('MONTH(a.activity_date) = MONTH(CURRENT_DATE())');
+        // }
+        
         $this->db->order_by("a.activity_date asc, a.ref_activityid asc");
         $result = $this->db->get();
 

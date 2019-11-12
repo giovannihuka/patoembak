@@ -104,6 +104,10 @@ $config['ci_bootstrap'] = array(
 			'name'		=> 'Videos',
 			'url'		=> 'video_list',
 		),
+		'activity' => array(
+			'name'		=> 'Calendars',
+			'url'		=> 'activity',
+		),
 		// 'test' => array(
 		// 	'name'		=> 'Test Page',
 		// 	'url'		=> 'test',
@@ -127,6 +131,7 @@ $config['ci_bootstrap'] = array(
 		// 'contract'		=> array('assistant'),
 		// 'video_list'	=> array('internal'),
 		// 'login' => array('pengerja,internal'),
+		'activity' => array('internal'),
 	),
 
 	// Email config
