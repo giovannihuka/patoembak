@@ -1,6 +1,6 @@
 
 <!-- <div class="container" style="margin: 0px 5px 3px 5px;"> -->
-<!-- <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> -->
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 <div class="container"">
 
 <?php if ((count($scripture)>0) && (!$this->ion_auth->logged_in())) { ?>
@@ -16,41 +16,6 @@
 </div>
 <?php } ?>
 
-<!-- <?php if (count($schedule_list)>0) { ?>
-  <div class="w3-card-4 w3-round-large">
-    <div class="box box-primary">
-      <div class="box-header">
-        <h3 class="box-title" style="font-weight: bold;">Kegiatan Minggu Ini</h3>
-      </div>
-      <div class="box-body table-responsive no-padding">
-        <table class="table table-striped" style="font-size: larger;">
-          <?php
-            $i=1;
-            foreach ($schedule_list as $row) {
-              if ($row['today_date'] === date('d')) {
-                echo '
-                  <tr>
-                    <td style="background-color:#337ab7 !important; color: #fff; text-align: left; font-size:15px; font-family: sans-serif; width: 40%">'.$row['activity_name'].'<br>'.$row['day_name'].', '.$row['tgl'].'</td>
-                    <td style="background-color:#337ab7 !important; color: #fff; text-align: left; font-size:15px; font-family: sans-serif; width: 40%">'.$row['remarks'].'</td>
-                    <td style="background-color:#337ab7 !important; color: #fff; text-align: right;  font-size:15px; font-family: sans-serif; width: 20%">'.$row['jam_mulai'].' - '.$row['jam_selesai'].' WIB</td>
-                  </tr>
-                ';
-              } else {
-                echo '
-                  <tr>
-                    <td style="text-align: left; font-size:15px; font-family: sans-serif; width: 40%">'.$row['activity_name'].'<br>'.$row['day_name'].', '.$row['tgl'].'</td>
-                    <td style="text-align: left; font-size:15px; font-family: sans-serif; width: 40%">'.$row['remarks'].'</td>
-                    <td style="text-align: right;  font-size:15px; font-family: sans-serif; width: 20%">'.$row['jam_mulai'].' - '.$row['jam_selesai'].' WIB</td>
-                ';              
-              }
-            $i++;
-          }
-          ?>
-        </table>
-      </div>
-    </div>
-  </div>
-<?php } ?> -->
 
 <?php if (!$this->ion_auth->logged_in()) { ?>
   <?php if (count($today_bday)>0) { ?>
@@ -140,7 +105,7 @@
   <?php } ?>
 <?php endif; ?>
 
-<?php if (count($schedule_list)>0) { ?>
+<!-- <?php if (count($schedule_list)>0) { ?>
       <?php
         $i=1;
         foreach ($schedule_list as $row) {
@@ -209,10 +174,57 @@
         $i++;
       }
     ?>
-<?php } ?>
+<?php } ?> -->
+
+
+    <div class="w3-card-2">
+      <div class="box box-primary">
+        <div class="box-header">
+          <h3 class="box-title" style="font-weight: bold;">Kegiatan Bulan Ini</h3>
+        </div>
+      </div>
+    </div>
 
 <!-- Put Caorousel here -->
+<?php if (count($schedule_list)>0) { ?>
+      <?php
+        $i=1;
+        foreach ($schedule_list as $row) {
+         if ($row['today_date'] === date('d')) {
+          echo '
+              <div class="w3-row w3-light-grey w3-card-4 w3-round-medium">
+                <div class="w3-col s3 w3-center" style="margin-bottom: 15px;">
+                  <h3 style="font-weight: bold; margin: 15px 0px 0px 0px;">'.$row['ddt'].'</h3>
+                  <h3 style="font-weight: bold; margin: 0px 0px 5px 0px;">'.$row['mot'].'</h3>
+                  <h7>'.$row['jam_mulai'].'-'.$row['jam_selesai'].'</h7>
+                </div>
+                <div class="w3-col s9 w3-container">
+                  <h5 style="font-weight: bold;">'.$row['activity_name'].'</h5>
+                  <p style="font-size: larger;">'.$row['remarks'].'</p>
+                </div>
+              </div>  
 
+          ';
+        } else {
+          echo '
+              <div class="w3-row">
+                <div class="w3-col s3 w3-center" >
+                  <h3 style="font-weight: bold; margin: 15px 0px 0px 0px;">'.$row['ddt'].'</h3>
+                  <h3 style="font-weight: bold; margin: 0px 0px 5px 0px;">'.$row['mot'].'</h3>
+                  <h7>'.$row['jam_mulai'].'-'.$row['jam_selesai'].'</h7>
+                </div>
+                <div class="w3-col s9 w3-container">
+                  <h5 style="font-weight: bold;">'.$row['activity_name'].'</h5>
+                  <p style="font-size: larger;">'.$row['remarks'].'</p>
+                </div>
+              </div>  
+
+          ';
+        }
+   } ?>
+<?php } ?>
+
+<!-- </div> -->
 <!-- END OF CAROUSEL -->
 
 </div>
