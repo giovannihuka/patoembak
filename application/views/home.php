@@ -177,13 +177,13 @@
 <?php } ?> -->
 
 
-    <div class="w3-card-2">
+    <!-- <div class="w3-card-2"> -->
       <div class="box box-primary">
         <div class="box-header">
           <h3 class="box-title" style="font-weight: bold;">Kegiatan Minggu Ini</h3>
         </div>
       </div>
-    </div>
+    <!-- </div> -->
 
 <!-- Put Caorousel here -->
 <?php if (count($schedule_list)>0) { ?>
@@ -203,7 +203,7 @@
                   <p style="font-size: larger;">'.$row['remarks'].'</p>
                 </div>
               </div>  
-
+              <hr>
           ';
         } else {
           echo '
@@ -218,7 +218,7 @@
                   <p style="font-size: larger;">'.$row['remarks'].'</p>
                 </div>
               </div>  
-
+              <hr>
           ';
         }
    } ?>
