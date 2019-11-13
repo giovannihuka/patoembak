@@ -109,7 +109,7 @@ $config['ci_bootstrap'] = array(
 			'icon'		=> 'fa fa-building-o',
 			'children'	=> array(
 				'Informasi Data Gereja' 	=> 'contract',
-				'Registrasi Gereja'	=> 'contract/create',
+				'Registrasi Gereja'	=> 		'contract/create',
 			)
 		),
 		'map' => array(
@@ -161,11 +161,11 @@ $config['ci_bootstrap'] = array(
 				'Informasi Jumlah Jemaat'	=> 'attendance',
 			)	
 		),
-		'blog' => array(
-			'name'		=> 'Blog',
-			'url'		=> 'blog',
-			'icon'		=> 'fa fa-newspaper-o',
-		),	
+		// 'blog' => array(
+		// 	'name'		=> 'Blog',
+		// 	'url'		=> 'blog',
+		// 	'icon'		=> 'fa fa-newspaper-o',
+		// ),	
 		'video' => array(
 			'name'		=> 'Video',
 			'url'		=> 'video',
@@ -227,7 +227,25 @@ $config['ci_bootstrap'] = array(
 		'ref_recurrence'			=> array('webmaster', 'admin'),
 		'admin/ref_role'			=> array('webmaster', 'admin'),
 		'admin/ref_marriage'		=> array('webmaster', 'admin'),
-		
+		'activitie'					=> array('penjadwalan'),
+		'pastor'					=> array('admin'),
+		'ref_gender'				=> array('admin'),
+		'pastor'					=> array('admin'),
+		'contract'					=> array('admin'),
+		'contract/create'			=> array('admin'),
+		'pastor'					=> array('admin'),
+		'individual'				=> array('admin'),
+		'individual/create'			=> array('admin'),
+		'individual/send_email'		=> array('admin'),
+		'ref_rank'					=> array('admin'),
+		'familie'					=> array('admin'),
+		'familie/create'			=> array('admin'),
+		'ref_acccategorie'			=> array('admin'),
+		'accounting'				=> array('admin'),
+		'account'					=> array('admin'),
+		'account/create'			=> array('admin'),
+		'ref_role'					=> array('admin'),
+		'ref_marriage'				=> array('admin'),
 	),
 
 	// AdminLTE settings
@@ -237,6 +255,7 @@ $config['ci_bootstrap'] = array(
 			'admin'		=> 'skin-blue',
 			'manager'	=> 'skin-black',
 			'staff'		=> 'skin-blue',
+			'penjadwalan'	=> 'skin-blue',
 		)
 	),
 
