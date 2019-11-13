@@ -131,7 +131,7 @@ $config['ci_bootstrap'] = array(
 		// 'contract'		=> array('assistant'),
 		// 'video_list'	=> array('internal'),
 		// 'login' => array('pengerja,internal'),
-		'activity' => array('internal'),
+		'activity' => array('internal,penjadwalan'),
 	),
 
 	// Email config
