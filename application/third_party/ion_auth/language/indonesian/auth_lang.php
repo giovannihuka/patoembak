@@ -46,7 +46,7 @@ $lang['index_create_group_link'] = 'Buat grup baru';
 
 // Deactivate User
 $lang['deactivate_heading']                  = 'Deaktivasi Pengguna';
-$lang['deactivate_subheading']               = 'Anda yakin akan melakukan deaktivasi akun Pengguna \'%s\'';
+$lang['deactivate_subheading']               = 'Apakah anda yakin untuk menghapus data ini akan melakukan deaktivasi akun Pengguna \'%s\'';
 $lang['deactivate_confirm_y_label']          = 'Ya:';
 $lang['deactivate_confirm_n_label']          = 'Tidak:';
 $lang['deactivate_submit_btn']               = 'Kirim';

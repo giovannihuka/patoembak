@@ -24,7 +24,7 @@ class Familie_model extends MY_Model
         $this->datatables->join('ref_regencies d','d.id = a.regency_id','left');
         $this->datatables->join('ref_districts e','e.id = a.district_id','left');
         $this->datatables->join('ref_villages f','f.id = a.village_id','left');
-        $this->datatables->add_column('action', anchor(site_url('admin/familie/read/$1'),'<i class=\'fa fa-eye\'></i>')."&nbsp&nbsp".anchor(site_url('admin/familie/update/$1'),'<i class=\'fa fa-pencil-square-o\'></i>')."&nbsp&nbsp".anchor(site_url('admin/familie/delete/$1'),'<i class=\'fa fa-trash-o\'></i>','onclick="javasciprt: return confirm(\'Anda yakin ?\')"'), 'id');
+        $this->datatables->add_column('action', anchor(site_url('admin/familie/read/$1'),'<i class=\'fa fa-eye\'></i>')."&nbsp&nbsp".anchor(site_url('admin/familie/update/$1'),'<i class=\'fa fa-pencil-square-o\'></i>')."&nbsp&nbsp".anchor(site_url('admin/familie/delete/$1'),'<i class=\'fa fa-trash-o\'></i>','onclick="javasciprt: return confirm(\'Apakah anda yakin untuk menghapus data ini ?\')"'), 'id');
         return $this->datatables->generate();
     }
 

@@ -30,7 +30,7 @@ class Video_model extends MY_Model
         // }        
         // $this->datatables->edit_column('sequence','<input type="text" id="row_seq" value="999" style="width: 50px; text-align: right;">&nbsp;&nbsp;'.anchor(site_url('admin/video/update_seq/$1'),'<i class=\'fa fa-save\'></i>'),'id');
         // $this->datatables->edit_column('sequence','<input type="text" id="row_seq" value="999" style="width: 50px; text-align: right;">&nbsp;&nbsp;<i class=\'fa fa-save\'></i>'),'id');
-        $this->datatables->add_column('action', anchor(site_url('admin/video/read/$1'),'<i class=\'fa fa-eye\'></i>')."&nbsp&nbsp".anchor(site_url('admin/video/update/$1'),'<i class=\'fa fa-pencil-square-o\'></i>')."&nbsp&nbsp".anchor(site_url('admin/video/delete/$1'),'<i class=\'fa fa-trash-o\'></i>','onclick="javasciprt: return confirm(\'Anda yakin ?\')"'), 'id');
+        $this->datatables->add_column('action', anchor(site_url('admin/video/read/$1'),'<i class=\'fa fa-eye\'></i>')."&nbsp&nbsp".anchor(site_url('admin/video/update/$1'),'<i class=\'fa fa-pencil-square-o\'></i>')."&nbsp&nbsp".anchor(site_url('admin/video/delete/$1'),'<i class=\'fa fa-trash-o\'></i>','onclick="javasciprt: return confirm(\'Apakah anda yakin untuk menghapus data ini ?\')"'), 'id');
         return $this->datatables->generate();
     }
 

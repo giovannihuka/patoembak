@@ -21,7 +21,7 @@ class Activitie_model extends MY_Model
         $this->datatables->from('activities a');
         $this->datatables->join('ref_activities b','b.id = a.ref_activityid','left');
         $this->db->order_by('a.activity_date desc');
-        $this->datatables->add_column('action', anchor(site_url('admin/activitie/read/$1'),'<i class=\'fa fa-eye\'></i>')."&nbsp&nbsp".anchor(site_url('admin/activitie/update/$1'),'<i class=\'fa fa-pencil-square-o\'></i>')."&nbsp&nbsp".anchor(site_url('admin/activitie/delete/$1'),'<i class=\'fa fa-trash-o\'></i>','onclick="javasciprt: return confirm(\'Anda yakin ?\')"'), 'id');
+        $this->datatables->add_column('action', anchor(site_url('admin/activitie/read/$1'),'<i class=\'fa fa-eye\'></i>')."&nbsp&nbsp".anchor(site_url('admin/activitie/update/$1'),'<i class=\'fa fa-pencil-square-o\'></i>')."&nbsp&nbsp".anchor(site_url('admin/activitie/delete/$1'),'<i class=\'fa fa-trash-o\'></i>','onclick="javasciprt: return confirm(\'Apakah anda yakin untuk menghapus data ini ?\')"'), 'id');
         return $this->datatables->generate();
     }
 

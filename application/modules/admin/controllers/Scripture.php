@@ -249,6 +249,7 @@ class Scripture extends Admin_Controller
         $this->add_script($this->datepicker_script,FALSE,'foot');
         $this->add_script($this->phoneformat_script,FALSE,'foot');
         $this->add_stylesheet($this->stylesheet,FALSE,'screen');
+        $this->add_stylesheet($this->select2_style,TRUE,'screen');
 
         $userid = $this->ion_auth->get_user_id();
         $username = $this->ion_auth->get_user_name();

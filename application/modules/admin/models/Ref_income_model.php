@@ -29,7 +29,7 @@ class Ref_income_model extends MY_Model
         //     $this->datatables->where('[a.]contract_id', $contract_id);
         // }        
         
-        $this->datatables->add_column('action', anchor(site_url('admin/ref_income/read/$1'),'<i class=\'fa fa-eye\'></i>')."&nbsp&nbsp".anchor(site_url('admin/ref_income/update/$1'),'<i class=\'fa fa-pencil-square-o\'></i>')."&nbsp&nbsp".anchor(site_url('admin/ref_income/delete/$1'),'<i class=\'fa fa-trash-o\'></i>','onclick="javasciprt: return confirm(\'Anda yakin ?\')"'), 'id');
+        $this->datatables->add_column('action', anchor(site_url('admin/ref_income/read/$1'),'<i class=\'fa fa-eye\'></i>')."&nbsp&nbsp".anchor(site_url('admin/ref_income/update/$1'),'<i class=\'fa fa-pencil-square-o\'></i>')."&nbsp&nbsp".anchor(site_url('admin/ref_income/delete/$1'),'<i class=\'fa fa-trash-o\'></i>','onclick="javasciprt: return confirm(\'Apakah anda yakin untuk menghapus data ini ?\')"'), 'id');
         return $this->datatables->generate();
     }
 

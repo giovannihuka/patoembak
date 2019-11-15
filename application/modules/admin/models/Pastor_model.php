@@ -36,7 +36,7 @@ class Pastor_model extends MY_Model
 
         $col_read = anchor(site_url('admin/pastor/read/$1'),'<i class=\'fa fa-eye\'></i>');
         $col_update = anchor(site_url('admin/pastor/update/$1'),'<i class=\'fa fa-pencil-square-o\'></i>');
-        $col_delete = anchor(site_url('admin/pastor/delete/$1'),'<i class=\'fa fa-trash-o\'></i>','onclick="javasciprt: return confirm(\'Anda yakin ?\')"');
+        $col_delete = anchor(site_url('admin/pastor/delete/$1'),'<i class=\'fa fa-trash-o\'></i>','onclick="javasciprt: return confirm(\'Apakah anda yakin untuk menghapus data ini ?\')"');
 
 
         if ($val === 'webmaster' || $val === 'admin') {
