@@ -132,6 +132,7 @@ $config['ci_bootstrap'] = array(
 		// 'video_list'	=> array('internal'),
 		// 'login' => array('pengerja,internal'),
 		'activity' => array('internal','penjadwalan'),
+		'admin' => array('internal','penjadwalan'),
 	),
 
 	// Email config
