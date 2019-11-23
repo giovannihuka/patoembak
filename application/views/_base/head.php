@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">	
 	<!-- <pre> -->
 		<link rel="icon" href="<?php echo base_url(); ?>assets/dist/images/logo_gbi.png" type="images/x-icon">
+		<link rel="shortcut icon" href="<?php echo base_url(); ?>assets/dist/images/logo_gbi.png" type="images/x-icon">
 	<!-- </pre> -->
 	<base href="<?php echo $base_url; ?>" />
 
