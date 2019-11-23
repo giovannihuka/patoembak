@@ -561,10 +561,11 @@ class Common_model extends MY_Model
         $this->db->from('activities a');
         $this->db->join('ref_activities b','b.id = a.ref_activityid','left');
         $this->db->where('a.status_data = "Aktif"');
-        // if ($site_info === 'nologin') {
-            // $this->db->where('YEARWEEK(a.activity_date, 1) = YEARWEEK(CURDATE(), 1)');
-            $this->db->where('a.activity_date >= CURDATE()');
-        // } elseif ($site_info === 'login') {
+        $this->db->where('a.activity_date >= CURDATE()');
+        if ($site_info === 'nologin') {
+            $this->db->where('YEARWEEK(a.activity_date, 1) = YEARWEEK(CURDATE(), 1)');
+            
+        } // elseif ($site_info === 'login') {
         //     $this->db->where('MONTH(a.activity_date) = MONTH(CURRENT_DATE())');
         // }
         
