@@ -13,7 +13,7 @@
       <?php
         $i=1;
         foreach ($schedule_list as $row) {
-         if ($row['today_date'] === date('d')) {
+         if ($row['today_date'] === date('d m Y')) {
           echo '
               <div class="w3-row w3-light-grey w3-card-4 w3-round-medium">
                 <div class="w3-col s3 w3-center" style="margin-bottom: 15px;">
