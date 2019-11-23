@@ -20,7 +20,7 @@ class Home extends MY_Controller {
 
     private $stylesheet = array(
         'assets/dist/admin/adminlte.min.css',
-        // 'assets/css/my_style.css',
+        
     );
 
 	public function index()

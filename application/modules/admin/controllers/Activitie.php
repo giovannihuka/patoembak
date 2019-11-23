@@ -17,6 +17,7 @@ class Activitie extends Admin_Controller
         'assets/datatables/DataTables-1.10.16/js/jquery.dataTables.min.js',
         'assets/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js',
         'assets/dist/admin/activitie.js',
+
     ); 
 
     private $stylesheet = array(
@@ -35,6 +36,7 @@ class Activitie extends Admin_Controller
         'assets/moment/moment.js',
         'assets/bootstrap-timepicker/bootstrap-timepicker.min.js',
         'assets/dist/admin/time_picker.js',
+        'assets/dist/admin/activity_trigger.js',
     );
 
     private $select2_style = array(
