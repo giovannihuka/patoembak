@@ -54,55 +54,55 @@ class Individual_model extends MY_Model
     // get data by id
     function get_by_id($id)
     {
-        $this->db->where($this->id, $id);
-        return $this->db->get($this->table)->row();
+        $this->datatables->select('a.id,a.individual_code,e.status_name,a.full_name,a.nick_name,a.gender,d.gender_name,a.blood_typeid,c.blood_type,date_format(a.birth_date,\'%Y-%M-%d\') as birth_date,a.birth_city,a.phone_num,a.contract_id,b.company_name,a.status_data');
+        $this->datatables->join('contracts b','b.contract_id = a.contract_id','left');
+        $this->datatables->join('ref_bloodtypes c','c.id = a.blood_typeid','left');
+        $this->datatables->join('ref_genders d','d.id = a.gender','left');
+        $this->datatables->join('ref_marriages e','e.id = a.marriage_status','left');
+        $this->db->where('a.id', $id);
+        return $this->db->get('individuals a')->row();
     }
 
     // get total rows
     function total_rows($q = NULL) {
-        $this->db->like('id', $q);
-	$this->db->or_like('first_name', $q);
-	$this->db->or_like('middle_name', $q);
-	$this->db->or_like('last_name', $q);
-    $this->db->or_like('individual_code',$q);
-    $this->db->or_like('full_name', $q);
-	$this->db->or_like('nick_name', $q);
-    $this->db->or_like('gender_name', $q);
-    $this->db->or_like('blood_type', $q);
-	$this->db->or_like('birth_date', $q);
-	$this->db->or_like('birth_daynum', $q);
-	$this->db->or_like('birth_monthnum', $q);
-	$this->db->or_like('birth_city', $q);
-    $this->db->or_like('marriage_status', $q);
-	$this->db->or_like('phone_num', $q);
-	$this->db->or_like('contract_id', $q);
-	$this->db->or_like('status_data', $q);
-	$this->db->from($this->table);
-        return $this->db->count_all_results();
+       $this->datatables->select('a.id,a.individual_code,e.status_name,a.full_name,a.nick_name,a.gender,d.gender_name,a.blood_typeid,c.blood_type,date_format(a.birth_date,\'%Y-%M-%d\') as birth_date,a.birth_city,a.phone_num,a.contract_id,b.company_name,a.status_data');
+       $this->datatables->join('contracts b','b.contract_id = a.contract_id','left');
+       $this->datatables->join('ref_bloodtypes c','c.id = a.blood_typeid','left');
+       $this->datatables->join('ref_genders d','d.id = a.gender','left');
+       $this->datatables->join('ref_marriages e','e.id = a.marriage_status','left');
+       $this->db->order_by('a.id', 'ASC');
+       $this->db->like('a.id', $q);
+       $this->db->or_like('a.full_name', $q);
+       $this->db->or_like('d.gender_name', $q);
+       $this->db->or_like('birth_date', $q);
+       $this->db->or_like('a.individual_code',$q);
+       $this->db->or_like('a.birth_city', $q);
+       $this->db->or_like('a.nick_name', $q);
+       $this->db->or_like('a.phone_num', $q);
+       $this->db->or_like('a.status_data', $q);
+	   $this->db->from('individuals a');
+       return $this->db->count_all_results();
     }
 
     // get data with limit and search
     function get_limit_data($limit, $start = 0, $q = NULL) {
-        $this->db->order_by($this->id, $this->order);
-        $this->db->like('id', $q);
-	$this->db->or_like('first_name', $q);
-	$this->db->or_like('middle_name', $q);
-	$this->db->or_like('last_name', $q);
-    $this->db->or_like('individual_code',$q);
-    $this->db->or_like('full_name', $q);
-	$this->db->or_like('nick_name', $q);
-    $this->db->or_like('gender_name', $q);
-    $this->db->or_like('blood_type', $q);
-	$this->db->or_like('birth_date', $q);
-	$this->db->or_like('birth_daynum', $q);
-	$this->db->or_like('birth_monthnum', $q);
-	$this->db->or_like('birth_city', $q);
-    $this->db->or_like('marriage_status', $q);
-	$this->db->or_like('phone_num', $q);
-	$this->db->or_like('contract_id', $q);
-	$this->db->or_like('status_data', $q);
-	$this->db->limit($limit, $start);
-        return $this->db->get($this->table)->result();
+       $this->db->select('a.id,a.individual_code,e.status_name,a.full_name,a.nick_name,a.gender,d.gender_name,a.blood_typeid,c.blood_type,date_format(a.birth_date,\'%Y-%M-%d\') as birth_date,a.birth_city,replace(i.phone_num,"-","") as phone_number,a.contract_id,b.company_name,a.status_data');
+        $this->db->join('contracts b','b.contract_id = a.contract_id','left');
+        $this->db->join('ref_bloodtypes c','c.id = a.blood_typeid','left');
+        $this->db->join('ref_genders d','d.id = a.gender','left');
+        $this->db->join('ref_marriages e','e.id = a.marriage_status','left');
+        $this->db->like('a.id', $q);
+    	$this->db->or_like('a.full_name', $q);
+    	$this->db->or_like('d.gender_name', $q);
+    	$this->db->or_like('birth_date', $q);
+        $this->db->or_like('a.individual_code',$q);
+        $this->db->or_like('a.birth_city', $q);
+    	$this->db->or_like('a.nick_name', $q);
+        $this->db->or_like('phone_number', $q);
+    	$this->db->or_like('a.status_data', $q);
+        $this->db->order_by('id','ASC');
+    	$this->db->limit($limit, $start);
+        return $this->db->get('individuals a')->result();
     }
 
 }

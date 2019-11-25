@@ -239,7 +239,7 @@ class Activitie extends Admin_Controller
             else
             {
                 // $errors = $this->system_message->errors();
-                $this->system_message->set_error($this->system_message->errors());
+                $this->system_message->set_error('Jadwal sudah pernah dibuat');
             }
             
             refresh();

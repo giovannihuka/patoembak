@@ -17,7 +17,7 @@ class Activitie_model extends MY_Model
 
     // datatables
     function json($contract_id = NULL) {
-        $this->datatables->select('a.id, a.ref_activityid, a.remarks, b.activity_name, date_format(a.activity_date,"%d-%M-%Y") tgl, time_format(a.time_start,"%H:%i") as jam_mulai, time_format(a.time_end,"%H:%i") as jam_selesai, a.status_data, a.create_userid, a.update_userid, a.create_time, a.update_time, a.activity_date, a.time_start, a.time_end');
+        $this->datatables->select('a.id, a.ref_activityid, a.remarks, b.activity_name, date_format(a.activity_date,"%d-%M-%Y") as tgl, time_format(a.time_start,"%H:%i") as jam_mulai, time_format(a.time_end,"%H:%i") as jam_selesai, a.status_data, a.create_userid, a.update_userid, a.create_time, a.update_time, a.activity_date, a.time_start, a.time_end');
         $this->datatables->from('activities a');
         $this->datatables->join('ref_activities b','b.id = a.ref_activityid','left');
         $this->db->order_by('a.activity_date desc');
@@ -28,8 +28,7 @@ class Activitie_model extends MY_Model
     // get all
     function get_all()
     {
-        $this->datatables->select('a.id, a.ref_activityid, a.remarks, b.activity_name, date_format(a.activity_date,"%d-%M-%Y") tgl, time_format(a.time_start,"%H:%i") as jam_mulai, time_format(a.time_end,"%H:%i") as jam_selesai, a.status_data, a.create_userid, a.update_userid, a.create_time, a.update_time, a.activity_date, a.time_start, a.time_end');
-        // $this->datatables->from('activities a');
+        $this->datatables->select('a.id, a.ref_activityid, a.remarks, b.activity_name, date_format(a.activity_date,"%d-%M-%Y") as tgl, time_format(a.time_start,"%H:%i") as jam_mulai, time_format(a.time_end,"%H:%i") as jam_selesai, a.status_data, a.create_userid, a.update_userid, a.create_time, a.update_time, a.activity_date, a.time_start, a.time_end');
         $this->datatables->join('ref_activities b','b.id = a.ref_activityid','left');
         $this->db->order_by('a.activity_date desc');
         return $this->db->get('activities a')->result();
@@ -38,8 +37,7 @@ class Activitie_model extends MY_Model
     // get data by id
     function get_by_id($id)
     {
-        $this->datatables->select('a.id, a.ref_activityid, a.remarks, b.activity_name, date_format(a.activity_date,"%d-%M-%Y") tgl, time_format(a.time_start,"%H:%i") as jam_mulai, time_format(a.time_end,"%H:%i") as jam_selesai, a.status_data, a.create_userid, a.update_userid, a.create_time, a.update_time, a.activity_date, a.time_start, a.time_end');
-        // $this->datatables->from('activities a');
+        $this->datatables->select('a.id, a.ref_activityid, a.remarks, b.activity_name, date_format(a.activity_date,"%d-%M-%Y") as tgl, time_format(a.time_start,"%H:%i") as jam_mulai, time_format(a.time_end,"%H:%i") as jam_selesai, a.status_data, a.create_userid, a.update_userid, a.create_time, a.update_time, a.activity_date, a.time_start, a.time_end');
         $this->datatables->join('ref_activities b','b.id = a.ref_activityid','left');
         $this->db->order_by('a.activity_date desc');
         $this->db->where('a.id', $id);
@@ -48,33 +46,34 @@ class Activitie_model extends MY_Model
     
     // get total rows
     function total_rows($q = NULL) {
-        $this->db->like('id', $q);
-	$this->db->or_like('ref_activityid', $q);
-	$this->db->or_like('time_start', $q);
-	$this->db->or_like('time_end', $q);
-	$this->db->or_like('status_data', $q);
-	$this->db->or_like('create_userid', $q);
-	$this->db->or_like('update_userid', $q);
-	$this->db->or_like('create_time', $q);
-	$this->db->or_like('update_time', $q);
-	$this->db->from($this->table);
+    $this->datatables->select('a.id, a.ref_activityid, a.remarks, b.activity_name, date_format(a.activity_date,"%d-%M-%Y") as tgl, time_format(a.time_start,"%H:%i") as jam_mulai, time_format(a.time_end,"%H:%i") as jam_selesai, a.status_data, a.create_userid, a.update_userid, a.create_time, a.update_time, a.activity_date, a.time_start, a.time_end');
+    $this->datatables->join('ref_activities b','b.id = a.ref_activityid','left');
+    $this->db->like('a.id', $q);
+	$this->db->or_like('a.remarks', $q);
+    $this->db->or_like('b.activity_name', $q);
+	$this->db->or_like('tgl', $q);
+	$this->db->or_like('jam_mulai', $q);
+    $this->db->or_like('jam_selesai', $q);
+	$this->db->or_like('a.status_data', $q);
+	$this->db->from('activities a');
         return $this->db->count_all_results();
     }
 
     // get data with limit and search
     function get_limit_data($limit, $start = 0, $q = NULL) {
-        $this->db->order_by($this->id, $this->order);
-        $this->db->like('id', $q);
-	$this->db->or_like('ref_activityid', $q);
-	$this->db->or_like('time_start', $q);
-	$this->db->or_like('time_end', $q);
-	$this->db->or_like('status_data', $q);
-	$this->db->or_like('create_userid', $q);
-	$this->db->or_like('update_userid', $q);
-	$this->db->or_like('create_time', $q);
-	$this->db->or_like('update_time', $q);
-	$this->db->limit($limit, $start);
-        return $this->db->get($this->table)->result();
+        $this->datatables->select('a.id, a.ref_activityid, a.remarks, b.activity_name, date_format(a.activity_date,"%d-%M-%Y") as tgl, time_format(a.time_start,"%H:%i") as jam_mulai, time_format(a.time_end,"%H:%i") as jam_selesai, a.status_data, a.create_userid, a.update_userid, a.create_time, a.update_time, a.activity_date, a.time_start, a.time_end');
+        $this->datatables->join('ref_activities b','b.id = a.ref_activityid','left');
+        $this->db->order_by('a.id', $this->order);
+        $this->db->like('a.id', $q);
+        $this->db->or_like('a.remarks', $q);
+        $this->db->or_like('b.activity_name', $q);
+        $this->db->or_like('tgl', $q);
+        $this->db->or_like('jam_mulai', $q);
+        $this->db->or_like('jam_selesai', $q);
+        $this->db->or_like('a.status_data', $q);
+    	$this->db->limit($limit, $start);
+        
+        return $this->db->get('activities a')->result();
     }
 
 }

@@ -35,12 +35,10 @@ $(document).ready(function() {
                     columns: [
                         {
                             "data": "id",
-                            "orderable": false
+                            "orderable": false,
                         },
 						{"data": "activity_name"},
-                        {
-                            "data": "remarks"
-                        },
+                        {"data": "remarks"},
                         {"data": "tgl"},
 						{"data": "jam_mulai"},
 						{"data": "jam_selesai"},
@@ -48,7 +46,7 @@ $(document).ready(function() {
                         {
                             "data" : "action",
                             "orderable": false,
-                            "className" : "text-center"
+                            "className" : "text-center",
                         }
                     ],
                     order: [[0, 'desc']],
