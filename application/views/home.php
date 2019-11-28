@@ -7,7 +7,7 @@
 
 <div class="w3-panel w3-card w3-round-large w3-light-grey">
   <p class="w3-large w3-serif">
-    <i class="fa fa-quote-right w3-large w3-text-red"></i><br>
+    <i class="fa fa-quote-left w3-large w3-text-red"></i><br>
     <i><?php echo $scripture['scriptures_text'] ?></i>
   </p>
   <?php if (!empty($scripture['scripture_section'])) { ?>

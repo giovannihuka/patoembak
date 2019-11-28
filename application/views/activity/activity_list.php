@@ -4,7 +4,7 @@
       <!-- <div class="w3-card-2"> -->
       <div class="box box-primary">
         <div class="box-header">
-          <h3 class="box-title" style="font-weight: bold;">Kegiatan GBI Patoembak</h3>
+          <h3 class="box-title" style="font-weight: bold;">Kegiatan</h3>
         </div>
       </div>
     <!-- </div> -->

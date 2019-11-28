@@ -101,11 +101,11 @@ $config['ci_bootstrap'] = array(
 		// 	'url'		=> 'map',
 		// ),
 		'video' => array(
-			'name'		=> 'Videos',
+			'name'		=> 'Video',
 			'url'		=> 'video_list',
 		),
 		'activity' => array(
-			'name'		=> 'Calendars',
+			'name'		=> 'Kegiatan',
 			'url'		=> 'activity',
 		),
 		// 'test' => array(
@@ -128,10 +128,6 @@ $config['ci_bootstrap'] = array(
 
 	// Restricted pages
 	'page_auth' => array(
-		// 'contract'		=> array('assistant'),
-		// 'video_list'	=> array('internal'),
-		// 'login' => array('pengerja,internal'),
-		// 'activity' => array('internal','penjadwalan'),
 		'admin' => array('internal','penjadwalan'),
 	),
 
