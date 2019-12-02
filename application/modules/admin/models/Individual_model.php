@@ -15,6 +15,7 @@ class Individual_model extends MY_Model
         parent::__construct();
     }
 
+
     // datatables
     function json($contract_id = NULL) {
         $this->datatables->select('a.id,a.individual_code,a.first_name,a.middle_name,a.last_name,e.status_name,a.full_name,a.nick_name,d.gender_name,c.blood_type,date_format(a.birth_date,\'%d-%M\') as birth_date,a.birth_daynum,a.birth_monthnum,a.birth_city,a.phone_num,a.contract_id,b.company_name,a.status_data,a.create_userid,a.update_userid,a.create_time,a.update_time');
@@ -23,7 +24,7 @@ class Individual_model extends MY_Model
         $this->datatables->join('ref_bloodtypes c','c.id = a.blood_typeid','left');
         $this->datatables->join('ref_genders d','d.id = a.gender','left');
         $this->datatables->join('ref_marriages e','e.id = a.marriage_status','left');
-        $this->db->order_by('id','ASC');
+        $this->db->order_by('a.id','ASC');
 
         // add this line for join
         //$this->datatables->join('table2', 'individuals.field = table2.field');
@@ -47,7 +48,7 @@ class Individual_model extends MY_Model
         $this->datatables->join('ref_bloodtypes c','c.id = a.blood_typeid','left');
         $this->datatables->join('ref_genders d','d.id = a.gender','left');
         $this->datatables->join('ref_marriages e','e.id = a.marriage_status','left');
-        $this->db->order_by('id','ASC');
+        $this->db->order_by('a.id','ASC');
         return $this->db->get('individuals a')->result();
     }
 

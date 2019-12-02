@@ -15,21 +15,13 @@ class Attendance_model extends MY_Model
         parent::__construct();
     }
 
+
     // datatables
     function json($contract_id = NULL) {
         $this->datatables->select('a.id,a.activity_date,a.ref_activityid,a.qty,b.activity_name');
         $this->datatables->from('attendances a');
         $this->datatables->join('ref_activities b','b.id = a.ref_activityid','left');
-
-        // add this line for join
-        //$this->datatables->join('table2', 'attendances.field = table2.field');
-
-        // Remove the comment to add filtering data
-        // if ($contract_id !== NULL)
-        // {
-        //     $this->datatables->where('[a.]contract_id', $contract_id);
-        // }        
-        
+        $this->db->order_by('a.id','DESC');
         $this->datatables->add_column('action', anchor(site_url('admin/attendance/read/$1'),'<i class=\'fa fa-eye\'></i>')."&nbsp&nbsp".anchor(site_url('admin/attendance/update/$1'),'<i class=\'fa fa-pencil-square-o\'></i>'), 'id');
         return $this->datatables->generate();
     }
@@ -40,6 +32,7 @@ class Attendance_model extends MY_Model
         $this->datatables->select('a.id,a.activity_date,a.ref_activityid,a.qty,b.activity_name');
         $this->datatables->from('attendances a');
         $this->datatables->join('ref_activities b','b.id = a.ref_activityid','left');
+        $this->db->order_by('a.id','DESC');
         return $this->db->get('attendances a')->result();
     }
 
@@ -49,28 +42,33 @@ class Attendance_model extends MY_Model
         $this->datatables->select('a.id,a.activity_date,a.ref_activityid,a.qty,b.activity_name');
         $this->datatables->from('attendances a');
         $this->datatables->join('ref_activities b','b.id = a.ref_activityid','left');
+        $this->db->where('a.id', $id);
         return $this->db->get('attendances a')->row();
     }
     
     // get total rows
     function total_rows($q = NULL) {
-        $this->db->like('id', $q);
-	$this->db->or_like('activity_date', $q);
-	$this->db->or_like('ref_activityid', $q);
-	$this->db->or_like('qty', $q);
-	$this->db->from($this->table);
+        $this->datatables->select('a.id,a.activity_date,a.ref_activityid,a.qty,b.activity_name');
+        $this->datatables->from('attendances a');
+        $this->datatables->join('ref_activities b','b.id = a.ref_activityid','left');
+        $this->db->like('a.id', $q);
+	    $this->db->or_like('a.activity_date', $q);
+	    $this->db->or_like('b.activity_name', $q);
+	    $this->db->from('attendances a');
         return $this->db->count_all_results();
     }
 
     // get data with limit and search
     function get_limit_data($limit, $start = 0, $q = NULL) {
-        $this->db->order_by($this->id, $this->order);
-        $this->db->like('id', $q);
-	$this->db->or_like('activity_date', $q);
-	$this->db->or_like('ref_activityid', $q);
-	$this->db->or_like('qty', $q);
-	$this->db->limit($limit, $start);
-        return $this->db->get($this->table)->result();
+        $this->datatables->select('a.id,a.activity_date,a.ref_activityid,a.qty,b.activity_name');
+        $this->datatables->from('attendances a');
+        $this->datatables->join('ref_activities b','b.id = a.ref_activityid','left');
+        // $this->db->order_by('a.id', 'DESC');
+        $this->db->like('a.id', $q);
+        $this->db->or_like('a.activity_date', $q);
+        $this->db->or_like('b.activity_name', $q);
+    	$this->db->limit($limit, $start);
+        return $this->db->get('attendances a')->result();
     }
 
 }
