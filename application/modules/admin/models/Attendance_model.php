@@ -20,7 +20,8 @@ class Attendance_model extends MY_Model
         $this->datatables->select('a.id,a.activity_date,a.ref_activityid,a.qty,b.activity_name');
         $this->datatables->from('attendances a');
         $this->datatables->join('ref_activities b','b.id = a.ref_activityid','left');
-        $this->db->order_by('a.id','DESC');
+        $this->db->order_by('a.activity_date','DESC');
+        $this->db->order_by('a.id','ASC');
         $this->datatables->add_column('action', anchor(site_url('admin/attendance/read/$1'),'<i class=\'fa fa-eye\'></i>')."&nbsp&nbsp".anchor(site_url('admin/attendance/update/$1'),'<i class=\'fa fa-pencil-square-o\'></i>'), 'id');
         return $this->datatables->generate();
     }
@@ -31,7 +32,8 @@ class Attendance_model extends MY_Model
         $this->datatables->select('a.id,a.activity_date,a.ref_activityid,a.qty,b.activity_name');
         $this->datatables->from('attendances a');
         $this->datatables->join('ref_activities b','b.id = a.ref_activityid','left');
-        $this->db->order_by('a.id','DESC');
+        $this->db->order_by('a.activity_date','DESC');
+        $this->db->order_by('a.id','ASC');
         return $this->db->get('attendances a')->result();
     }
 
