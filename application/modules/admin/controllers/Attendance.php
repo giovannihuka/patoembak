@@ -376,6 +376,7 @@ class Attendance extends Admin_Controller
 
         $this->mViewData['attendance'] = $data;
         $this->mViewData['status_list'] = $this->common_ref->status_list();
+        $this->mViewData['activity_list'] = $this->common_ref->activity_list();
         $this->mPageTitle = 'Ubah Info Kehadiran';
         $this->mViewData['form'] = $form;
         $this->render('attendance/attendances_update');

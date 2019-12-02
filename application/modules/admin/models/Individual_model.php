@@ -23,7 +23,7 @@ class Individual_model extends MY_Model
         $this->datatables->join('ref_bloodtypes c','c.id = a.blood_typeid','left');
         $this->datatables->join('ref_genders d','d.id = a.gender','left');
         $this->datatables->join('ref_marriages e','e.id = a.marriage_status','left');
-        $this->db->order_by('id','ASC');
+        $this->db->order_by('a.id','ASC');
 
         // add this line for join
         //$this->datatables->join('table2', 'individuals.field = table2.field');
@@ -47,7 +47,7 @@ class Individual_model extends MY_Model
         $this->datatables->join('ref_bloodtypes c','c.id = a.blood_typeid','left');
         $this->datatables->join('ref_genders d','d.id = a.gender','left');
         $this->datatables->join('ref_marriages e','e.id = a.marriage_status','left');
-        $this->db->order_by('id','ASC');
+        $this->db->order_by('a.id','ASC');
         return $this->db->get('individuals a')->result();
     }
 
