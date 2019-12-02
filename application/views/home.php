@@ -130,7 +130,7 @@
                   <p style="font-size: larger;">'.$row['remarks'].'</p>
                 </div>
               </div>  
-              <hr style="margin-top: 20px; margin-bottom: 10px;">
+              <hr>
           ';
         } else {
           echo '
@@ -145,7 +145,7 @@
                   <p style="font-size: larger;">'.$row['remarks'].'</p>
                 </div>
               </div>  
-              <hr style="margin-top: 20px; margin-bottom: 10px;">
+              <hr>
           ';
         }
    } ?>
