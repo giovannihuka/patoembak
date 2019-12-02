@@ -30,7 +30,7 @@ $(document).ready(function() {
                     serverSide: true,
                     stateSave: true,
                     lengthMenu: [[10, 50, 100, -1], [10, 50, 100, "All"]],
-                    pageLength: 10,
+                    pageLength: 50,
                     ajax: {"url": "attendance/json", "type": "POST"},
                     columns: [
                         {
