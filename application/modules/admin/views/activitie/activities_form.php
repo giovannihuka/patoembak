@@ -9,6 +9,11 @@
 				<?php echo $form->bs3_dropdown('Nama Kegiatan','ref_activityid',$activity_list,'','','Pilih Nama Kegiatan'); ?>
 				<?php echo $form->bs3_date('Tgl. Kegiatan','activity_date','','','','Tanggal Kegiatan'); ?>
 				<?php echo $form->bs3_textarea('Keterangan','remarks','','','','Keterangan'); ?>
+				<script>
+					window.onload = function() {
+						CKEDITOR.replace('remarks',{});
+					};
+				</script>
 				<?php echo $form->bs3_time('Mulai Kegiatan','time_start','','','','Masukkan Mulai Kegiatan'); ?>
 				<?php echo $form->bs3_time('Selesai Kegiatan','time_end','','','','Masukkan Selesai Kegiatan'); ?>
 				<?php echo $form->bs3_text_hidden('Create Userid','create_userid'); ?>

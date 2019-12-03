@@ -61,9 +61,15 @@ class Activitie extends Admin_Controller
         'assets/dist/admin/prod_categorization.js',
     );
 
+    private $ckeditor_script = array(
+        'assets/ckeditor/ckeditor.js',
+        'assets/ckeditor/config.js',
+    );
+
     public function index()
     {
         $this->add_script($this->script,FALSE,'foot');
+
         $this->add_stylesheet($this->stylesheet,FALSE,'screen');
         $this->mPageTitle = 'Informasi Daftar Kegiatan'; 
         $this->render('activitie/activities_list');
@@ -196,6 +202,7 @@ class Activitie extends Admin_Controller
         $form = $this->form_builder->create_form('',false,array('autocomplete'=>'off'));
 
         $this->add_script($this->select2_script,FALSE,'foot');
+        $this->add_script($this->ckeditor_script,FALSE,'head');
         $this->add_script($this->datepicker_script,FALSE,'foot');
         $this->add_script($this->timepicker_script,FALSE,'foot');
         $this->add_script($this->phoneformat_script,FALSE,'foot');
@@ -260,6 +267,7 @@ class Activitie extends Admin_Controller
         $form = $this->form_builder->create_form('',false,array('autocomplete'=>'off'));
 
         $this->add_script($this->select2_script,FALSE,'foot');
+        $this->add_script($this->ckeditor_script,FALSE,'head');
         $this->add_script($this->datepicker_script,FALSE,'foot');
         $this->add_script($this->timepicker_script,FALSE,'foot');
         $this->add_script($this->phoneformat_script,FALSE,'foot');

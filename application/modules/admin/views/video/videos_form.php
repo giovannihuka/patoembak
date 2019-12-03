@@ -13,6 +13,7 @@
 						CKEDITOR.replace('video_desc',{});
 					};
 				</script>
+				
 				<?php echo $form->bs3_text('URL','video_url','','','','Masukkan URL'); ?>
 				<?php echo $form->bs3_date('Tgl. Publikasi','publish_date','','','','Masukkan Tgl. Publikasi'); ?>
 				<?php echo $form->bs3_date('Tgl. Akhir Publikasi','end_date','','','','Masukkan Tgl. Akhir Publikasi'); ?>

@@ -43,7 +43,7 @@ class Video extends Admin_Controller
         'assets/dist/admin/prod_categorization.js',
     );
 
-    private $ckeditor_script = array(
+    private $ckeditor_script = array( 
         'assets/ckeditor/ckeditor.js',
         'assets/ckeditor/config.js',
     );
