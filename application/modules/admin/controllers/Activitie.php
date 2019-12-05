@@ -114,7 +114,7 @@ class Activitie extends Admin_Controller
 					'ref_activityid' => $row->ref_activityid,
                     'activity_name' => $row->activity_name,
                     'tgl' => $row->tgl,
-                    'remarks' => $row->remarks,
+                    'remarks' => $row->catatan,
 					'time_start' => $row->jam_mulai,
 					'time_end' => $row->jam_selesai,
 					'status_data' => $row->status_data,

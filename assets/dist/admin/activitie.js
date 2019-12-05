@@ -38,7 +38,7 @@ $(document).ready(function() {
                             "orderable": false,
                         },
 						{"data": "activity_name"},
-                        {"data": "remarks"},
+                        {"data": "catatan"},
                         {"data": "tgl"},
 						{"data": "jam_mulai"},
 						{"data": "jam_selesai"},
