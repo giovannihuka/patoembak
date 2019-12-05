@@ -129,6 +129,7 @@ $config['ci_bootstrap'] = array(
 	// Restricted pages
 	'page_auth' => array(
 		'admin' => array('internal','penjadwalan'),
+		'activity' => array('internal','penjadwalan'),
 	),
 
 	// Email config
