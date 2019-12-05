@@ -14,7 +14,7 @@
 				<?php echo $form->bs3_text('Keterangan','description',$accounting['description'],'','','Masukkan Keterangan'); ?>
 				<?php echo $form->bs3_dropdown('Status Data','status_data','',$accounting['status_data'],'','Pilih Status Data'); ?>
 				<?php echo $form->bs3_submit('Update'); ?>
-            	<?php echo '<button type="reset" class="btn btn-default" onclick="location.href=\'accounting\'">Cancel</button>' ?>
+            	<?php echo '<button type="reset" class="btn btn-default" onclick="location.href=\'accounting\'">Back to List</button>' ?>
             	<?php echo $form->close(); ?>
             </div>
         </div>

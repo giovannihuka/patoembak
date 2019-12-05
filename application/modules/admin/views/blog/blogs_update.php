@@ -12,7 +12,7 @@
 				<?php echo $form->bs3_text('Tgl. Publikasi','publish_date',$blog['publish_date'],'','','Masukkan Tgl. Publikasi'); ?>
 				<?php echo $form->bs3_text('Tgl. Akhir Publikasi','end_date',$blog['end_date'],'','','Masukkan Tgl. Akhir Publikasi'); ?>
 				<?php echo $form->bs3_submit('Update'); ?>
-            	<?php echo '<button type="reset" class="btn btn-default" onclick="location.href=\'blog\'">Cancel</button>' ?>
+            	<?php echo '<button type="reset" class="btn btn-default" onclick="location.href=\'blog\'">Back to List</button>' ?>
             	<?php echo $form->close(); ?>
             </div>
         </div>

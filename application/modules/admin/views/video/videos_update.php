@@ -19,7 +19,7 @@
                 <?php echo $form->bs3_text('Urutan','sequence_num',$video['sequence_num'],'','','Masukkan Urutan'); ?>
 				<?php echo $form->bs3_dropdown('Status Data','status_data',$status_list,$video['status_data'],'','Pilih Status Data'); ?>
 				<?php echo $form->bs3_submit('Update'); ?>
-            	<?php echo '<button type="reset" class="btn btn-default" onclick="location.href=\'video\'">Cancel</button>' ?>
+            	<?php echo '<button type="reset" class="btn btn-default" onclick="location.href=\'video\'">Back to List</button>' ?>
             	<?php echo $form->close(); ?>
             </div>
         </div>

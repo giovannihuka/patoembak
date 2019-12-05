@@ -41,7 +41,7 @@
 				
 				<?php echo $form->bs3_dropdown('Status Data','status_data',$status_list,$familie['status_data'],'','Pilih Status Data'); ?>
 				<?php echo $form->bs3_submit('Update'); ?>
-            	<?php echo '<button type="reset" class="btn btn-default" onclick="location.href=\'familie\'">Cancel</button>' ?>
+            	<?php echo '<button type="reset" class="btn btn-default" onclick="location.href=\'familie\'">Back to List</button>' ?>
             	<?php echo $form->close(); ?>
             </div>
         </div>

@@ -10,7 +10,7 @@
 				<?php echo $form->bs3_dropdown('Jabatan','rank_id',$rank_list,$pastor['rank_id'],'','Pilih Jabatan'); ?>
                 <?php echo $form->bs3_dropdown('Status Data','status_data',$status_list,$pastor['status_data'],'','Pilih Status Data'); ?>
 				<?php echo $form->bs3_submit('Update'); ?>
-            	<?php echo '<button type="reset" class="btn btn-default" onclick="location.href=\'pastor\'">Cancel</button>' ?>
+            	<?php echo '<button type="reset" class="btn btn-default" onclick="location.href=\'pastor\'">Back to List</button>' ?>
             	<?php echo $form->close(); ?>
             </div>
         </div>

@@ -21,7 +21,7 @@
 				<?php echo $form->bs3_date('Tanggal Berhenti Kontrak','terminate_date',$contract['terminate_date'],'','','Masukkan Tanggal Berhenti Kontrak'); ?>
 				<?php echo $form->bs3_dropdown('Status Data','status_data',$status_list,$contract['status_data'],'','Pilih Status Data'); ?>
 				<?php echo $form->bs3_submit('Update'); ?>
-            	<?php echo '<button type="reset" class="btn btn-default" onclick="location.href=\'contract\'">Cancel</button>' ?>
+            	<?php echo '<button type="reset" class="btn btn-default" onclick="location.href=\'contract\'">Back to List</button>' ?>
             	<?php echo $form->close(); ?>
             </div>
         </div>

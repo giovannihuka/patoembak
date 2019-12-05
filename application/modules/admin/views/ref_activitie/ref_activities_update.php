@@ -9,7 +9,7 @@
 				<?php echo $form->bs3_text('Nama Kegiatan','activity_name',$ref_activitie['activity_name'],'','','Masukkan Nama Kegiatan'); ?>
 				<?php echo $form->bs3_dropdown('Status Data','status_data',$status_list,$ref_activitie['status_data'],'','Pilih Status Data'); ?>
 				<?php echo $form->bs3_submit('Update'); ?>
-            	<?php echo '<button type="reset" class="btn btn-default" onclick="location.href=\'ref_activitie\'">Cancel</button>' ?>
+            	<?php echo '<button type="reset" class="btn btn-default" onclick="location.href=\'ref_activitie\'">Back to List</button>' ?>
             	<?php echo $form->close(); ?>
             </div>
         </div>

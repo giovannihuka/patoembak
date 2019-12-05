@@ -12,7 +12,7 @@
 				<?php echo $form->bs3_text_hidden('Create Time','create_time'); ?>
 				<?php echo $form->bs3_text_hidden('Update Time','update_time'); ?>
 				<?php echo $form->bs3_submit('Create'); ?>
-            	<?php echo '<button type="reset" class="btn btn-default" onclick="location.href=\'ref_gender\'">Cancel</button>' ?>
+            	<?php echo '<button type="reset" class="btn btn-default" onclick="location.href=\'ref_gender\'">Back to List</button>' ?>
             	<?php echo $form->close(); ?>
             </div>
         </div>

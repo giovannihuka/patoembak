@@ -10,7 +10,7 @@
 				<?php echo $form->bs3_text('Kategori','category_name',$ref_acccategorie['category_name'],'','','Masukkan Kategori'); ?>
 				<?php echo $form->bs3_dropdown('Status Data','status_data','',$ref_acccategorie['status_data'],'','Pilih Status Data'); ?>
 				<?php echo $form->bs3_submit('Update'); ?>
-            	<?php echo '<button type="reset" class="btn btn-default" onclick="location.href=\'ref_acccategorie\'">Cancel</button>' ?>
+            	<?php echo '<button type="reset" class="btn btn-default" onclick="location.href=\'ref_acccategorie\'">Back to List</button>' ?>
             	<?php echo $form->close(); ?>
             </div>
         </div>

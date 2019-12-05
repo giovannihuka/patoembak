@@ -12,7 +12,7 @@
 				<?php echo $form->bs3_text('Nama Rekening','chart_name',$account['chart_name'],'','','Masukkan Nama Rekening'); ?>
 				<?php echo $form->bs3_dropdown('Status Data','status_data',$status_list,$account['status_data'],'','Pilih Status Data'); ?>
 				<?php echo $form->bs3_submit('Update'); ?>
-            	<?php echo '<button type="reset" class="btn btn-default" onclick="location.href=\'account\'">Cancel</button>' ?>
+            	<?php echo '<button type="reset" class="btn btn-default" onclick="location.href=\'account\'">Back to List</button>' ?>
             	<?php echo $form->close(); ?>
             </div>
         </div>
