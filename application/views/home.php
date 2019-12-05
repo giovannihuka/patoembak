@@ -126,9 +126,9 @@
                   <h7>'.$row['jam_mulai'].'-'.$row['jam_selesai'].'</h7>
                 </div>
                 <div class="w3-col s9 w3-container">
-                  <h5 style="font-weight: bold;">'.$row['activity_name'].'</h5>
-                  <p style="font-size: larger;">'.$row['remarks'].'</p>
-                </div>
+                  <h5 style="font-weight: bold;">'.$row['activity_name'].'</h5>'
+                  .$row['remarks'].
+                '</div>
               </div>  
               <hr>
           ';
@@ -141,9 +141,9 @@
                   <h7>'.$row['jam_mulai'].'-'.$row['jam_selesai'].'</h7>
                 </div>
                 <div class="w3-col s9 w3-container">
-                  <h5 style="font-weight: bold;">'.$row['activity_name'].'</h5>
-                  <p style="font-size: larger;">'.$row['remarks'].'</p>
-                </div>
+                  <h5 style="font-weight: bold;">'.$row['activity_name'].'</h5>'
+                  .$row['remarks'].
+                '</div>
               </div>  
               <hr>
           ';
