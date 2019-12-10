@@ -17,11 +17,13 @@
 				<div class="row">
                 	<div class="col-md-12">
 						<?php echo $form->bs3_textarea('Keterangan','remarks','','','','Keterangan'); ?>
-						<script>
-							window.onload = function() {
-								CKEDITOR.replace('remarks',{});
-							};
-						</script>
+                        <script>
+                            window.onload = function() {
+                                CKEDITOR.replace('remarks',{
+                                    customConfig: 'custom_config.js'
+                                });
+                            };
+                        </script>
 					</div>
 				</div>
 				<div class="row">

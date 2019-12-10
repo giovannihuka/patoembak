@@ -19,7 +19,9 @@
                         <?php echo $form->bs3_textarea('Keterangan','remarks',$activitie['remarks'],'','','Keterangan'); ?>
                         <script>
                             window.onload = function() {
-                                CKEDITOR.replace('remarks',{});
+                                CKEDITOR.replace('remarks',{
+                                    customConfig: 'custom_config.js'
+                                });
                             };
                         </script>
                     </div>

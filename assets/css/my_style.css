@@ -52,6 +52,10 @@ div.ckeditor_val
     color: #555;
 }
 
+.sidebar-menu: hover {
+    overflow: visible;
+}
+
 .resp-container {
     position: relative;
     overflow: hidden;
@@ -165,13 +169,13 @@ div.ckeditor_val
     }
 }*/
 
-/*@media (max-width: 767px)
+@media (max-width: 767px)
 {
 .skin-red .main-header .navbar .dropdown-menu li a 
     {
         color: #000; 
     }
-}*/
+}
 
 /*
  --- Scroll up button ----
