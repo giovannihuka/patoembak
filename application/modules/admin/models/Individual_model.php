@@ -17,7 +17,7 @@ class Individual_model extends MY_Model
 
     // datatables
     function json($contract_id = NULL) {
-        $this->datatables->select('a.id,a.individual_code,a.first_name,a.middle_name,a.last_name,a.marriage_status,e.status_name,a.full_name,a.nick_name,d.gender_name,c.blood_type,date_format(a.birth_date,\'%d-%M\') as birth_date,a.birth_daynum,a.birth_monthnum,a.birth_city,a.phone_num,a.contract_id,b.company_name,a.status_data,a.create_userid,a.update_userid,a.create_time,a.update_time');
+        $this->datatables->select('a.id,a.individual_code,a.first_name,a.middle_name,a.last_name,a.marriage_status,e.status_name,a.full_name,a.nick_name,d.gender_name,c.blood_type,date_format(a.birth_date,\'%d-%M\') as birth_date,a.birth_daynum,a.birth_monthnum,a.birth_city,a.phone_num,a.contract_id,b.company_name,a.status_data,a.create_userid,a.update_userid,a.create_time,a.update_time,a.birth_date as birth_day');
         $this->datatables->from('individuals a');
         $this->datatables->join('contracts b','b.contract_id = a.contract_id','left');
         $this->datatables->join('ref_bloodtypes c','c.id = a.blood_typeid','left');
@@ -42,7 +42,7 @@ class Individual_model extends MY_Model
     // get all
     function get_all()
     {
-        $this->datatables->select('a.id,a.individual_code,a.marriage_status,e.status_name,a.full_name,a.nick_name,a.gender,d.gender_name,a.blood_typeid,c.blood_type,date_format(a.birth_date,\'%Y-%M-%d\') as birth_date,a.birth_daynum,a.birth_monthnum,a.birth_city,a.phone_num,a.contract_id,b.company_name,a.status_data');
+        $this->datatables->select('a.id,a.individual_code,a.marriage_status,e.status_name,a.full_name,a.nick_name,a.gender,d.gender_name,a.blood_typeid,c.blood_type,date_format(a.birth_date,\'%Y-%M-%d\') as birth_date,a.birth_daynum,a.birth_monthnum,a.birth_city,a.phone_num,a.contract_id,b.company_name,a.status_data,a.birth_date as birth_day');
         $this->datatables->join('contracts b','b.contract_id = a.contract_id','left');
         $this->datatables->join('ref_bloodtypes c','c.id = a.blood_typeid','left');
         $this->datatables->join('ref_genders d','d.id = a.gender','left');
@@ -54,7 +54,7 @@ class Individual_model extends MY_Model
     // get data by id
     function get_by_id($id)
     {
-        $this->datatables->select('a.id,a.individual_code,a.marriage_status,e.status_name,a.full_name,a.nick_name,a.gender,d.gender_name,a.blood_typeid,c.blood_type,date_format(a.birth_date,\'%Y-%M-%d\') as birth_date,a.birth_daynum,a.birth_monthnum,a.birth_city,a.phone_num,a.contract_id,b.company_name,a.status_data');
+        $this->datatables->select('a.id,a.individual_code,a.marriage_status,e.status_name,a.full_name,a.nick_name,a.gender,d.gender_name,a.blood_typeid,c.blood_type,date_format(a.birth_date,\'%Y-%M-%d\') as birth_date,a.birth_daynum,a.birth_monthnum,a.birth_city,a.phone_num,a.contract_id,b.company_name,a.status_data,a.birth_date as birth_day');
         $this->datatables->join('contracts b','b.contract_id = a.contract_id','left');
         $this->datatables->join('ref_bloodtypes c','c.id = a.blood_typeid','left');
         $this->datatables->join('ref_genders d','d.id = a.gender','left');
@@ -65,7 +65,7 @@ class Individual_model extends MY_Model
 
     // get total rows
     function total_rows($q = NULL) {
-       $this->datatables->select('a.id,a.individual_code,a.marriage_status,e.status_name,a.full_name,a.nick_name,a.gender,d.gender_name,a.blood_typeid,c.blood_type,date_format(a.birth_date,\'%Y-%M-%d\') as birth_date,a.birth_daynum,a.birth_monthnum,a.birth_city,a.phone_num,a.contract_id,b.company_name,a.status_data');
+       $this->datatables->select('a.id,a.individual_code,a.marriage_status,e.status_name,a.full_name,a.nick_name,a.gender,d.gender_name,a.blood_typeid,c.blood_type,date_format(a.birth_date,\'%Y-%M-%d\') as birth_date,a.birth_daynum,a.birth_monthnum,a.birth_city,a.phone_num,a.contract_id,b.company_name,a.status_data,a.birth_date as birth_day');
        $this->datatables->join('contracts b','b.contract_id = a.contract_id','left');
        $this->datatables->join('ref_bloodtypes c','c.id = a.blood_typeid','left');
        $this->datatables->join('ref_genders d','d.id = a.gender','left');
@@ -86,7 +86,7 @@ class Individual_model extends MY_Model
 
     // get data with limit and search
     function get_limit_data($limit, $start = 0, $q = NULL) {
-       $this->db->select('a.id,a.individual_code,a.marriage_status,e.status_name,a.full_name,a.nick_name,a.gender,d.gender_name,a.blood_typeid,c.blood_type,date_format(a.birth_date,\'%Y-%M-%d\') as birth_date,a.birth_daynum,a.birth_monthnum,a.birth_city,replace(i.phone_num,"-","") as phone_number,a.contract_id,b.company_name,a.status_data');
+       $this->db->select('a.id,a.individual_code,a.marriage_status,e.status_name,a.full_name,a.nick_name,a.gender,d.gender_name,a.blood_typeid,c.blood_type,date_format(a.birth_date,\'%Y-%M-%d\') as birth_date,a.birth_daynum,a.birth_monthnum,a.birth_city,replace(i.phone_num,"-","") as phone_number,a.contract_id,b.company_name,a.status_data,a.birth_date as birth_day');
         $this->db->join('contracts b','b.contract_id = a.contract_id','left');
         $this->db->join('ref_bloodtypes c','c.id = a.blood_typeid','left');
         $this->db->join('ref_genders d','d.id = a.gender','left');

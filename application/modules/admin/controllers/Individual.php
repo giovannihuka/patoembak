@@ -129,7 +129,7 @@ class Individual extends Admin_Controller
 					'nick_name' => $row->nick_name,
                     'gender' => $row->gender,
                     'blood_typeid' => $row->blood_typeid,
-					'birth_date' => $row->birth_date,
+					'birth_date' => $row->birth_day,
 					'birth_daynum' => $row->birth_daynum,
 					'birth_monthnum' => $row->birth_monthnum,
                     'marriage_status' => $row->marriage_status,
@@ -144,7 +144,7 @@ class Individual extends Admin_Controller
         $this->mViewData['contract_list'] = $this->common_ref->contract_list();
         $this->mViewData['gender_list'] = $this->common_ref->gender_list();
         $this->mViewData['blood_list'] = $this->common_ref->blood_list();
-        $this->mViewData['marriage_status'] = $this->common_ref->marriage_status();
+        $this->mViewData['marriage_list'] = $this->common_ref->marriage_status($row->marriage_status);
         $this->mViewData['individual'] = $data;
         $this->mPageTitle = 'Data Jiwa';
         $this->mViewData['form'] = $form;

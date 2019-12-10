@@ -41,6 +41,9 @@
 						<?php echo $form->bs3_dropdown('Gereja Cabang','contract_id',$contract_list,$individual['contract_id'],'','',0,1); ?>
 					</div>
 					<div class="col-md-3">
+						<?php echo $form->bs3_dropdown('Status Pernikahan','marriage_status',$marriage_list,$individual['marriage_status'],'','',0,1); ?>
+					</div>
+					<div class="col-md-3">
 						<?php echo $form->bs3_text('Status Data','status_data',$individual['status_data'],'readonly'); ?>
 					</div>
 				</div>
