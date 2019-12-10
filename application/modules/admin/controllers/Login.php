@@ -11,7 +11,7 @@ class Login extends MY_Controller {
 	public function index()
 	{
 		$this->load->library('form_builder');
-		$form = $this->form_builder->create_form();
+		$form = $this->form_builder->create_form('',false,array('autocomplete'=>'off'));
 
 		if ($form->validate())
 		{
