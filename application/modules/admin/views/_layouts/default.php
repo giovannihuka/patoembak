@@ -12,7 +12,7 @@
 				</div>
 			</div>
 			<?php // (Optional) Add Search box here ?>
-			<!-- <?php $this->load->view('_partials/sidemenu_search'); ?> -->
+			<?php $this->load->view('_partials/sidemenu_search'); ?>
 			<?php $this->load->view('_partials/sidemenu'); ?>
 		</section>
 	</aside>

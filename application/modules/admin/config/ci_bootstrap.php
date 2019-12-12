@@ -34,11 +34,13 @@ $config['ci_bootstrap'] = array(
 	'scripts' => array(
 		'head'	=> array(
 			'assets/dist/admin/adminlte.min.js',
+			// 'assets/dist/admin/sidemenu_stay.js',
 			'assets/dist/admin/lib.min.js',
 			'assets/dist/admin/app.min.js',
 		),
 		'foot'	=> array(
 			// 'assets/bootstrap/js/bootstrap.min.js',
+			// 'assets/dist/admin/sidemenu_stay.js',
 		),
 	),
 
@@ -88,57 +90,34 @@ $config['ci_bootstrap'] = array(
 				'Admin User Groups'		=> 'panel/admin_user_group',
 			)
 		),
-		'rank' => array(
-			'name'		=> 'Jabatan',
-			'url'		=> 'ref_rank',
-			'icon'		=> 'fa fa-exchange',
-		),
-		'pastor' => array(
-			'name'		=> 'Gembala',
-			'url'		=> 'pastor',
-			'icon'		=> 'fa fa-child',
-		),
-		'gender' => array(
-			'name'		=> 'Jenis Kelamin',
-			'url'		=> 'ref_gender',
-			'icon'		=> 'fa fa-venus-mars',
-		),
 		'contract' => array(
 			'name'		=> 'Gereja',
 			'url'		=> 'contract',
 			'icon'		=> 'fa fa-building-o',
+			// 'icon'		=> 'fas fa-church',
 			'children'	=> array(
 				'Informasi Data Gereja' 	=> 'contract',
-				'Registrasi Gereja'	=> 		'contract/create',
+				'Registrasi Gereja'	=> 'contract/create',
+				'Lokasi Gereja' 	=> 'map',
 			)
 		),
-		'map' => array(
-			'name'		=> 'Peta Lokasi',
-			'url'		=> 'map',
-			'icon'		=> 'fa fa-map-o',
-		),
-		'activity' => array(
-			'name'		=> 'Agenda Kegiatan',
+		'activitie' => array(
+			'name'		=> 'Kegiatan Gereja',
 			'url'		=> 'activitie',
 			'icon'		=> 'fa fa-calendar-check-o',
+			'children'	=> array(
+				'Jadwal Kegiatan'	=> 'activitie',
+				'Jumlah Kehadiran'	=> 'attendance',
+			)
 		),
 		'individual' => array(
-			'name'		=> 'Informasi Individu',
+			'name'		=> 'Pendataan Jemaat',
 			'url'		=> 'individual',
 			'icon'		=> 'fa fa-address-book-o',
 			'children'	=> array(
-				'Informasi Data Individu' 	=> 'individual',
-				'Registrasi Individu'	=> 'individual/create',
-				'Kirim Email'		=> 'individual/send_email',
-			)
-		),	
-		'familie' => array(
-			'name'		=> 'Informasi Keluarga',
-			'url'		=> 'familie',
-			'icon'		=> 'fa fa-address-card-o',
-			'children'	=> array(
-				'Data Keluarga' 	=> 'familie',
-				'Registrasi Keluarga'	=> 'familie/create',
+				'Data per Individu' => 'individual',
+				'Data per Keluarga'	=> 'familie',
+				// 'Kirim Email'		=> 'individual/send_email',
 			)
 		),	
 		'accounting' => array(
@@ -150,7 +129,7 @@ $config['ci_bootstrap'] = array(
 				'Transaksi Keuangan' 	=> 'accounting',
 			),
 		),
-		'admin'=> array(
+		'configuration'=> array(
 			'name'		=> 'Konfigurasi Sistem',
 			'url'		=> 'admin',
 			'icon'		=> 'fa fa-cog',
@@ -158,23 +137,19 @@ $config['ci_bootstrap'] = array(
 				'Peran Dalam Keluarga'	=> 'ref_role',
 				'Status Pernikahan'		=> 'ref_marriage',
 				'Referensi Kegiatan'	=> 'ref_activitie',
-				'Informasi Jumlah Jemaat'	=> 'attendance',
+				'Jenis Kelamin'			=> 'ref_gender',
+				'Referensi Jabatan'		=> 'ref_rank',
+				'Referensi Gembala'		=> 'pastor',
 			)	
 		),
-		// 'blog' => array(
-		// 	'name'		=> 'Blog',
-		// 	'url'		=> 'blog',
-		// 	'icon'		=> 'fa fa-newspaper-o',
-		// ),	
-		'video' => array(
-			'name'		=> 'Video',
-			'url'		=> 'video',
-			'icon'		=> 'fa fa-film',
-		),	
-		'scripture' => array(
-			'name'		=> 'Firman Tuhan',
-			'url'		=> 'scripture',
-			'icon'		=> 'fa fa-book',
+		'blog' => array(
+			'name'		=> 'Blog',
+			'url'		=> 'blog',
+			'icon'		=> 'fa fa-newspaper-o',
+			'children'	=> array(
+				'Pastor Message'	=> 'video',
+				'Firman Tuhan'		=> 'scripture',
+			)
 		),	
 		'logview' => array(
 			'name'		=> 'Log Viewer',

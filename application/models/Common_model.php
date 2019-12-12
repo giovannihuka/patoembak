@@ -323,7 +323,7 @@ class Common_model extends MY_Model
         {
             $return[0] = '-- Pilih Nama Gembala --';
             foreach ($result->result_array() as $row) {
-                $return[$row['remarks']] = $row['remarks'];
+                $return[$row['id']] = $row['pastor_name'];
             }
         } else {
             $return[0] = '-- Pilih Nama Gembala --';
