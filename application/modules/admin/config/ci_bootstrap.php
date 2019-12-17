@@ -34,13 +34,11 @@ $config['ci_bootstrap'] = array(
 	'scripts' => array(
 		'head'	=> array(
 			'assets/dist/admin/adminlte.min.js',
-			// 'assets/dist/admin/sidemenu_stay.js',
 			'assets/dist/admin/lib.min.js',
 			'assets/dist/admin/app.min.js',
 		),
 		'foot'	=> array(
-			// 'assets/bootstrap/js/bootstrap.min.js',
-			// 'assets/dist/admin/sidemenu_stay.js',
+			'assets/dist/admin/sidemenu_stay.js',
 		),
 	),
 
@@ -52,7 +50,6 @@ $config['ci_bootstrap'] = array(
 			'assets/dist/admin/lib.min.css',
 			'assets/dist/admin/app.min.css',
 			'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic',
-			// 'assets/css/w3.css',
 		)
 	),
 
@@ -94,7 +91,6 @@ $config['ci_bootstrap'] = array(
 			'name'		=> 'Gereja',
 			'url'		=> 'contract',
 			'icon'		=> 'fa fa-building-o',
-			// 'icon'		=> 'fas fa-church',
 			'children'	=> array(
 				'Informasi Data Gereja' 	=> 'contract',
 				'Registrasi Gereja'	=> 'contract/create',
