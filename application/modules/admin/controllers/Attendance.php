@@ -108,6 +108,7 @@ class Attendance extends Admin_Controller
 
 					'activity_date' => $row->activity_date,
 					'ref_activityid' => $row->ref_activityid,
+                    'activity_name' => $row->activity_name,
 					'qty' => $row->qty,
 
                 );
