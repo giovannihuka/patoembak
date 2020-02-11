@@ -17,8 +17,10 @@ class Accounting_model extends MY_Model
 
     // datatables
     function json($contract_id = NULL) {
-        $this->datatables->select('id,in_out,activity_id,activity_date,amount,people,description,status_data,create_userid,update_userid,create_time,update_time');
-        $this->datatables->from('accountings');
+        $this->datatables->select('a.id,a.in_out,b.reference_name,a.activity_id,c.activity_name,a.activity_date,format(a.amount,0) as amount ,a.people,a.description,a.status_data,a.create_userid,a.update_userid,a.create_time,a.update_time');
+        $this->datatables->from('accountings a');
+        $this->datatables->join('ref_accountings b','b.id = a.in_out','left');
+        $this->datatables->join('ref_activities c','c.id = a.activity_id','left');
 
         // add this line for join
         //$this->datatables->join('table2', 'accountings.field = table2.field');
@@ -29,7 +31,7 @@ class Accounting_model extends MY_Model
         //     $this->datatables->where('[a.]contract_id', $contract_id);
         // }        
         
-        $this->datatables->add_column('action', anchor(site_url('admin/accounting/read/$1'),'<i class=\'fa fa-eye\'></i>')."&nbsp&nbsp".anchor(site_url('admin/accounting/update/$1'),'<i class=\'fa fa-pencil-square-o\'></i>')."&nbsp&nbsp".anchor(site_url('admin/accounting/delete/$1'),'<i class=\'fa fa-trash-o\'></i>','onclick="javasciprt: return confirm(\'Apakah anda yakin untuk menghapus data ini ?\')"'), 'id');
+        $this->datatables->add_column('action', anchor(site_url('admin/accounting/read/$1'),'<i class=\'fa fa-eye\'></i>')."&nbsp&nbsp".anchor(site_url('admin/accounting/update/$1'),'<i class=\'fa fa-pencil-square-o\'></i>'), 'id');
         return $this->datatables->generate();
     }
 

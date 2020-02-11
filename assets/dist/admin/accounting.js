@@ -37,11 +37,20 @@ $(document).ready(function() {
                             "data": "id",
                             "orderable": false
                         },
-						{"data": "in_out"},
-						{"data": "activity_id"},
-						{"data": "activity_date"},
-						{"data": "amount"},
-						{"data": "people"},
+						{"data": "reference_name"},
+						{"data": "activity_name"},
+						{
+                            "data": "activity_date",
+                            "className" : "text-center",
+                        },
+						{
+                            "data": "amount",
+                            "className" : "text-right",
+                        },
+						{
+                            "data": "people",
+                            "className" : "text-right",
+                        },
 						{"data": "description"},
 						{"data": "status_data"},
                         {
