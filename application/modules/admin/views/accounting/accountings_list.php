@@ -10,8 +10,7 @@
                             </div>
                         </div>
                         <div class="col-md-4 text-right">
-                            <?php echo anchor(site_url('admin/accounting/create'), 'Create', 'class="btn btn-primary"'); ?>
-		<?php echo anchor(site_url('admin/accounting/excel'), 'Excel', 'class="btn btn-primary"'); ?>                    </div>
+                            <?php echo anchor(site_url('admin/accounting/create'), 'Create', 'class="btn btn-primary"'); ?>                    </div>
                 </div>
                 <div class="table-responsive">
 	    
@@ -20,10 +19,10 @@
                 <tr>
                     <th width="45px">No</th>
 		    <th>Pemasukan / Pengeluaran</th>
-		    <th>Jenis Pembayaran</th>
 		    <th>Nama Aktifitas</th>
 		    <th>Tanggal Aktifitas</th>
-		    <th>Jumlah</th>
+		    <th>Jumlah Uang</th>
+		    <th>Jemaat</th>
 		    <th>Keterangan</th>
 		    <th>Status Data</th>
 		    <th width="80px">Aksi</th>

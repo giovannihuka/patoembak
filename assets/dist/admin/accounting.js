@@ -38,10 +38,10 @@ $(document).ready(function() {
                             "orderable": false
                         },
 						{"data": "in_out"},
-						{"data": "category_id"},
 						{"data": "activity_id"},
 						{"data": "activity_date"},
 						{"data": "amount"},
+						{"data": "people"},
 						{"data": "description"},
 						{"data": "status_data"},
                         {

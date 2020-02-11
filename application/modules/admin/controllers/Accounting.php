@@ -56,7 +56,7 @@ class Accounting extends Admin_Controller
     {
         $this->add_script($this->script,FALSE,'foot');
         $this->add_stylesheet($this->stylesheet,FALSE,'screen');
-        $this->mPageTitle = 'Jurnal Keuangan'; 
+        $this->mPageTitle = 'Informasi Jurnal Keuangan'; 
         $this->render('accounting/accountings_list');
     } 
     
@@ -97,10 +97,10 @@ class Accounting extends Admin_Controller
                 $data = array (
 
 					'in_out' => $row->in_out,
-					'category_id' => $row->category_id,
 					'activity_id' => $row->activity_id,
 					'activity_date' => $row->activity_date,
 					'amount' => $row->amount,
+					'people' => $row->people,
 					'description' => $row->description,
 					'status_data' => $row->status_data,
 
@@ -129,79 +129,6 @@ class Accounting extends Admin_Controller
         }
     }
 
-
-    public function excel()
-    {
-        $this->load->helper('exportexcel');
-        $namaFile = "accountings.xls";
-        $judul = "accountings";
-        $tablehead = 0;
-        $tablebody = 1;
-        $nourut = 1;
-        //penulisan header
-        header("Pragma: public");
-        header("Expires: 0");
-        header("Cache-Control: must-revalidate, post-check=0,pre-check=0");
-        header("Content-Type: application/force-download");
-        header("Content-Type: application/octet-stream");
-        header("Content-Type: application/download");
-        header("Content-Disposition: attachment;filename=" . $namaFile . "");
-        header("Content-Transfer-Encoding: binary ");
-
-        xlsBOF();
-
-        $kolomhead = 0;
-        xlsWriteLabel($tablehead, $kolomhead++, "No");
-	xlsWriteLabel($tablehead, $kolomhead++, "In Out");
-	xlsWriteLabel($tablehead, $kolomhead++, "Category Id");
-	xlsWriteLabel($tablehead, $kolomhead++, "Activity Id");
-	xlsWriteLabel($tablehead, $kolomhead++, "Activity Date");
-	xlsWriteLabel($tablehead, $kolomhead++, "Amount");
-	xlsWriteLabel($tablehead, $kolomhead++, "Description");
-	xlsWriteLabel($tablehead, $kolomhead++, "Status Data");
-	xlsWriteLabel($tablehead, $kolomhead++, "Create Userid");
-	xlsWriteLabel($tablehead, $kolomhead++, "Update Userid");
-	xlsWriteLabel($tablehead, $kolomhead++, "Create Time");
-	xlsWriteLabel($tablehead, $kolomhead++, "Update Time");
-
-	foreach ($this->Accounting_model->get_all() as $data) {
-            $kolombody = 0;
-
-            //ubah xlsWriteLabel menjadi xlsWriteNumber untuk kolom numeric
-            xlsWriteNumber($tablebody, $kolombody++, $nourut);
-	    xlsWriteNumber($tablebody, $kolombody++, $data->in_out);
-	    xlsWriteNumber($tablebody, $kolombody++, $data->category_id);
-	    xlsWriteNumber($tablebody, $kolombody++, $data->activity_id);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->activity_date);
-	    xlsWriteNumber($tablebody, $kolombody++, $data->amount);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->description);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->status_data);
-	    xlsWriteNumber($tablebody, $kolombody++, $data->create_userid);
-	    xlsWriteNumber($tablebody, $kolombody++, $data->update_userid);
-	    xlsWriteNumber($tablebody, $kolombody++, $data->create_time);
-	    xlsWriteNumber($tablebody, $kolombody++, $data->update_time);
-
-	    $tablebody++;
-            $nourut++;
-        }
-
-        xlsEOF();
-        exit();
-    }
-
-    public function get_categorlist()
-    {
-        $province_id = $this->input->post('province_id');
-        if ($province_id) {
-            $result = $this->common_ref->regency_list($province_id);
-        } else {
-            $result = $this->common_ref->regency_list('0');
-        }
-        $retval = $this->form_builder->create_form()->bs3_dropdown('Kabupaten','ref_regencies',$result); 
-        echo $retval;
-        //echo json_encode($result);
-    }
-
     public function create()
     {
         $form = $this->form_builder->create_form('',false,array('autocomplete'=>'off'));
@@ -220,10 +147,10 @@ class Accounting extends Admin_Controller
         if ($form->validate())
         {
 			$in_out = $this->input->post('in_out');
-			$category_id = $this->input->post('category_id');
 			$activity_id = $this->input->post('activity_id');
 			$activity_date = $this->input->post('activity_date');
 			$amount = $this->input->post('amount');
+			$people = $this->input->post('people');
 			$description = $this->input->post('description');
 			$status_data = $this->input->post('status_data');
 
@@ -231,10 +158,10 @@ class Accounting extends Admin_Controller
         	insert(array
                 (
 					'in_out' => $in_out,
-					'category_id' => $category_id,
 					'activity_id' => $activity_id,
 					'activity_date' => $activity_date,
 					'amount' => $amount,
+					'people' => $people,
 					'description' => $description,
 					'status_data' => 'Aktif', // '1' = Data Baru; '2' = Aktif; '3' = Tidak Aktif
 					'create_userid' => $userid,
@@ -258,6 +185,9 @@ class Accounting extends Admin_Controller
         }
 
         $this->mViewData['accounting'] = $this->Accounting_model->get_all();
+        $this->mViewData['in_out'] = $this->common_ref->accounting_list();
+        $this->mViewData['activity_list'] = $this->common_ref->activity_list();
+        $this->mViewData['status_list'] = $this->common_ref->status_list();
         $this->mPageTitle = 'Registrasi Jurnal Keuangan';
         $this->mViewData['form'] = $form;
         $this->render('accounting/accountings_form');
@@ -283,10 +213,10 @@ class Accounting extends Admin_Controller
         if ($form->validate())
         {
 			$in_out = $this->input->post('in_out');
-			$category_id = $this->input->post('category_id');
 			$activity_id = $this->input->post('activity_id');
 			$activity_date = $this->input->post('activity_date');
 			$amount = $this->input->post('amount');
+			$people = $this->input->post('people');
 			$description = $this->input->post('description');
 			$status_data = $this->input->post('status_data');
 
@@ -297,10 +227,10 @@ class Accounting extends Admin_Controller
                 array
                 (
 					'in_out' => $in_out,
-					'category_id' => $category_id,
 					'activity_id' => $activity_id,
 					'activity_date' => $activity_date,
 					'amount' => $amount,
+					'people' => $people,
 					'description' => $description,
 					'status_data' => $status_data,
 					'update_userid' => $userid,
@@ -331,10 +261,10 @@ class Accounting extends Admin_Controller
 
         $data = array (
 					'in_out' => $row->in_out,
-					'category_id' => $row->category_id,
 					'activity_id' => $row->activity_id,
 					'activity_date' => $row->activity_date,
 					'amount' => $row->amount,
+					'people' => $row->people,
 					'description' => $row->description,
 					'status_data' => $row->status_data,
 					'button' => 'Update',
@@ -362,11 +292,6 @@ Please copy this section into ../application/modules/admin/config/form_validatio
             	'rules'		 => 'trim|required|numeric',
         	),
         	array(
-            	'field'		 => 'category_id',
-            	'label'		 => 'Jenis Pembayaran',
-            	'rules'		 => 'trim|required|numeric',
-        	),
-        	array(
             	'field'		 => 'activity_id',
             	'label'		 => 'Nama Aktifitas',
             	'rules'		 => 'trim|required|numeric',
@@ -378,7 +303,12 @@ Please copy this section into ../application/modules/admin/config/form_validatio
         	),
         	array(
             	'field'		 => 'amount',
-            	'label'		 => 'Jumlah',
+            	'label'		 => 'Jumlah Uang',
+            	'rules'		 => 'trim|required|numeric',
+        	),
+        	array(
+            	'field'		 => 'people',
+            	'label'		 => 'Jemaat',
             	'rules'		 => 'trim|required|numeric',
         	),
         	array(
@@ -401,11 +331,6 @@ Please copy this section into ../application/modules/admin/config/form_validatio
             	'rules'		 => 'trim|required|numeric',
         	),
         	array(
-            	'field'		 => 'category_id',
-            	'label'		 => 'Jenis Pembayaran',
-            	'rules'		 => 'trim|required|numeric',
-        	),
-        	array(
             	'field'		 => 'activity_id',
             	'label'		 => 'Nama Aktifitas',
             	'rules'		 => 'trim|required|numeric',
@@ -417,7 +342,12 @@ Please copy this section into ../application/modules/admin/config/form_validatio
         	),
         	array(
             	'field'		 => 'amount',
-            	'label'		 => 'Jumlah',
+            	'label'		 => 'Jumlah Uang',
+            	'rules'		 => 'trim|required|numeric',
+        	),
+        	array(
+            	'field'		 => 'people',
+            	'label'		 => 'Jemaat',
             	'rules'		 => 'trim|required|numeric',
         	),
         	array(
@@ -438,4 +368,4 @@ Please copy this section into ../application/modules/admin/config/form_validatio
 /* End of file Accounting.php */
 /* Location: ./application/controllers/Accounting.php */
 /* Please DO NOT modify this information : */
-/* Generated by Harviacode Custom Codeigniter CRUD Generator 2019-11-08 16:04:33 */
+/* Generated by Harviacode Custom Codeigniter CRUD Generator 2020-02-11 22:02:32 */

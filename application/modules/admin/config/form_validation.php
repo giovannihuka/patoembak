@@ -1113,4 +1113,76 @@ $config = array(
                 'rules'      => 'trim|required',
             ),
         ),
+
+    'accounting/create' => array(
+            array(
+                'field'      => 'in_out',
+                'label'      => 'Pemasukan / Pengeluaran',
+                'rules'      => 'trim|required|numeric',
+            ),
+            array(
+                'field'      => 'activity_id',
+                'label'      => 'Nama Aktifitas',
+                'rules'      => 'trim|required|numeric',
+            ),
+            array(
+                'field'      => 'activity_date',
+                'label'      => 'Tanggal Aktifitas',
+                'rules'      => 'trim|required',
+            ),
+            array(
+                'field'      => 'amount',
+                'label'      => 'Jumlah Uang',
+                'rules'      => 'trim|required|numeric',
+            ),
+            array(
+                'field'      => 'people',
+                'label'      => 'Jemaat',
+                'rules'      => 'trim|required|numeric',
+            ),
+            array(
+                'field'      => 'description',
+                'label'      => 'Keterangan',
+                'rules'      => 'trim',
+            ),
+        ),
+
+
+    'accounting/update' => array(
+            array(
+                'field'      => 'in_out',
+                'label'      => 'Pemasukan / Pengeluaran',
+                'rules'      => 'trim|required|numeric',
+            ),
+            array(
+                'field'      => 'activity_id',
+                'label'      => 'Nama Aktifitas',
+                'rules'      => 'trim|required|numeric',
+            ),
+            array(
+                'field'      => 'activity_date',
+                'label'      => 'Tanggal Aktifitas',
+                'rules'      => 'trim|required',
+            ),
+            array(
+                'field'      => 'amount',
+                'label'      => 'Jumlah Uang',
+                'rules'      => 'trim|required|numeric',
+            ),
+            array(
+                'field'      => 'people',
+                'label'      => 'Jemaat',
+                'rules'      => 'trim|required|numeric',
+            ),
+            array(
+                'field'      => 'description',
+                'label'      => 'Keterangan',
+                'rules'      => 'trim|required',
+            ),
+            array(
+                'field'      => 'status_data',
+                'label'      => 'Status Data',
+                'rules'      => 'trim|required',
+            ),
+        ),
 );
