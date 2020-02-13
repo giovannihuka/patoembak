@@ -457,8 +457,9 @@ class Common_model extends MY_Model
     */
     function bday_list()
     {
+        $currYearFmt=date('Y').'-m-d';
         $this->db->select("i.full_name,i.nick_name,date_format(i.birth_date,'%d') 'tgl_ulangtahun', YEAR(CURDATE()) - YEAR(i.birth_date) 'umur',
-            case DAYOFWEEK(DATE_FORMAT(i.birth_date,'2019-%m-%d'))
+            case DAYOFWEEK(DATE_FORMAT(i.birth_date,$currYearFmt))
                 WHEN 1 THEN 'Minggu'
                 WHEN 2 THEN 'Senin'
                 WHEN 3 THEN 'Selasa'
