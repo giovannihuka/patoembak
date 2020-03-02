@@ -123,6 +123,7 @@ $config['ci_bootstrap'] = array(
 			'children'	=> array(
 				'Kategori'				=> 'ref_acccategorie',
 				'Transaksi Keuangan' 	=> 'accounting',
+				'Laporan Keuangan'		=> 'vw_accreport',
 			),
 		),
 		'configuration'=> array(
