@@ -274,6 +274,9 @@ class Accounting extends Admin_Controller
         }
 
         $this->mViewData['accounting'] = $data;
+        // $this->mViewData['accounting'] = $this->Accounting_model->get_all();
+        $this->mViewData['in_out_list'] = $this->common_ref->accounting_list();
+        $this->mViewData['activity_list'] = $this->common_ref->activity_list();
         $this->mViewData['status_list'] = $this->common_ref->status_list();
         $this->mPageTitle = 'Ubah Jurnal Keuangan';
         $this->mViewData['form'] = $form;

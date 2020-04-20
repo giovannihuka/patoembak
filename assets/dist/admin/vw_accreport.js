@@ -42,7 +42,10 @@ $(document).ready(function() {
 						{"data": "monthnum"},
 						{"data": "weeknum"},
 						{"data": "activity_name"},
-						{"data": "amount"},
+						{
+                            "data": "amount",
+                            "className" : "text-right",
+                        },
 						{"data": "people"},
                         {
                             "data" : "action",
