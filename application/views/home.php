@@ -17,7 +17,7 @@
 <?php } ?>
 
 
-<?php if (!$this->ion_auth->logged_in()) { ?>
+<!-- <?php if (!$this->ion_auth->logged_in()) { ?> -->
   <?php if (count($today_bday)>0) { ?>
     <div class="w3-card-4 w3-round-large">
       <div class="box box-primary">
@@ -51,7 +51,7 @@
       </div>
     </div>
   <?php } ?>
-<?php } ?>
+<!-- <?php } ?> -->
 
 
 <?php if ($this->ion_auth->logged_in()): ?>
