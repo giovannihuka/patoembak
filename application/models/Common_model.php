@@ -490,7 +490,7 @@ class Common_model extends MY_Model
                 WHEN 7 THEN 'Sabtu'
             END AS 'day_name'");
         $this->db->from('individuals i');
-        $this->db->where('i.status_data = "Aktif" and DATE_FORMAT(i.birth_date,"2019-%m-%d") = CURDATE()');
+        $this->db->where('i.status_data = "Aktif" and DATE_FORMAT(i.birth_date,'.$currYearFmt.') = CURDATE()');
         $this->db->order_by("date_format(i.birth_date,'%d') ASC");
         $result = $this->db->get();
 
