@@ -216,7 +216,7 @@ class Individual extends Admin_Controller
             $this->Individual_model->delete($id);
             $this->Individual_model->set_primary_key('id');
             $this->session->set_flashdata('message', 'Delete Record Success');
-            redirect(site_url('admin/contract'));
+            redirect(site_url('admin/individual'));
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('admin/individual'));
