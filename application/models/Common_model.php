@@ -360,6 +360,51 @@ class Common_model extends MY_Model
     }
 
     /*
+     * Drop down list nama-nama Individu yang belum masuk daftar Keluarga
+    */
+
+    /*
+
+        
+        $query = $pocdb->query($strquery);
+
+    */
+    function individunonfamily_list()
+    {
+        // $this->db->where('status_data','2');
+        // $this->db->from('individuals a');
+        // $this->db->join('families b','b.head_fam_id = a.id','left');
+        // $this->db->where('a.status_data','Aktif');
+        // $this->db->where(' YEAR(CURDATE()) - YEAR(a.birth_date) > 20');
+        // $this->db->order_by('a.full_name','asc');
+
+        $strquery = "SELECT " . "a.id, a.full_name
+             FROM individuals a
+             WHERE a.status_data = 'Aktif'
+             AND a.id NOT IN
+             (
+                 SELECT b.head_fam_id
+                 FROM families b
+                 WHERE b.status_data = 'Aktif'
+             );";
+        $result = $this->db->query($strquery);
+
+        $return = array('');
+
+        if ($result->num_rows() > 0)
+        {
+            $return[0] = '-- Pilih Nama Kepala Keluarga --';
+            foreach ($result->result_array() as $row) {
+                $return[$row['id']] = $row['full_name'];
+            }
+        } else {
+            $return[0] = '-- Pilih Nama Kepala Keluarga --';
+        }
+
+        return $return; 
+    }
+
+    /*
      * Drop down list nama Jabatan di Gereja
     */
     function rank_list()

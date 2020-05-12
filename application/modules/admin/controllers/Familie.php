@@ -297,7 +297,7 @@ class Familie extends Admin_Controller
 
         $this->add_script($this->location_script,FALSE,'foot');
         $this->mViewData['familie'] = $this->Familie_model->get_all();
-        $this->mViewData['individu_list'] = $this->common_ref->individu_list();
+        $this->mViewData['individu_list'] = $this->common_ref->individunonfamily_list();
         $this->mViewData['province_list'] = $this->common_ref->province_list();
         $this->mViewData['regency_list'] = $this->common_ref->regency_list('');
         $this->mViewData['district_list'] = $this->common_ref->district_list('');
