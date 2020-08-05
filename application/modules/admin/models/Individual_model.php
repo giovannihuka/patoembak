@@ -54,7 +54,7 @@ class Individual_model extends MY_Model
     // get data by id
     function get_by_id($id)
     {
-        $this->datatables->select('a.id,a.individual_code,a.marriage_status,e.status_name,a.full_name,a.nick_name,a.gender,d.gender_name,a.blood_typeid,c.blood_type,date_format(a.birth_date,\'%Y-%M-%d\') as birth_date,a.birth_daynum,a.birth_monthnum,a.birth_city,a.phone_num,a.contract_id,b.company_name,a.status_data,a.birth_date as birth_day');
+        $this->datatables->select('a.id,a.individual_code,a.marriage_status,e.status_name,a.full_name,a.nick_name,a.gender,d.gender_name,a.blood_typeid,c.blood_type,date_format(a.birth_date,\'%Y-%m-%d\') as birth_date,a.birth_daynum,a.birth_monthnum,a.birth_city,a.phone_num,a.contract_id,b.company_name,a.status_data,a.birth_date as birth_day');
         $this->datatables->join('contracts b','b.contract_id = a.contract_id','left');
         $this->datatables->join('ref_bloodtypes c','c.id = a.blood_typeid','left');
         $this->datatables->join('ref_genders d','d.id = a.gender','left');
