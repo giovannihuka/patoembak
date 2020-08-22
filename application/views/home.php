@@ -1,7 +1,7 @@
 
 <!-- <div class="container" style="margin: 0px 5px 3px 5px;"> -->
 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-<div class="container"">
+<div class="container">
 
 <?php if ((count($scripture)>0) && (!$this->ion_auth->logged_in())) { ?>
 
