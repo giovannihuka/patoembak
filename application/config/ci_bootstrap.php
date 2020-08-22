@@ -104,6 +104,11 @@ $config['ci_bootstrap'] = array(
 			'name'		=> 'Video',
 			'url'		=> 'video_list',
 		),
+		'ytube' => array(
+			'name'		=> 'YouTube',
+			'url'		=> 'https://www.youtube.com/channel/UCIDUq5BHeiFc1tRfsRr5efQ',
+			'target'	=> '_blank',
+		),
 		'activity' => array(
 			'name'		=> 'Kegiatan',
 			'url'		=> 'activity',
