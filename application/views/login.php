@@ -7,8 +7,8 @@
 			<!-- <p class="login-box-msg">Sign in to start your session</p> -->
 			<?php echo $form->open(); ?>
 				<?php echo $form->messages(); ?>
-				<?php echo $form->bs3_text('Username', 'username', ENVIRONMENT==='development' ? 'member' : ''); ?>
-				<?php echo $form->bs3_password('Password', 'password', ENVIRONMENT==='development' ? 'member' : ''); ?>
+				<?php echo $form->bs3_text('Username', 'username', ENVIRONMENT==='development' ? '' : ''); ?>
+				<?php echo $form->bs3_password('Password', 'password', ENVIRONMENT==='development' ? '' : ''); ?>
 				<div class="row">
 					<div class="col-xs-6">
 						<div class="checkbox">

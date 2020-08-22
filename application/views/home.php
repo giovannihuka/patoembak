@@ -78,7 +78,7 @@
                 echo '
                   <tr style="background-color:#337ab7 !important; color: #fff; font-weight: bold;">
                     <td style="text-align: center; width: 5%;">'.$i.'.</td>
-                    <td style="text-align: left; width: 25%;">'.$row['full_name'].' ('.$row['umur'].') </td>
+                    <td style="text-align: left; width: 25%;">'.$row['full_name'].'</td>
                     <td style="text-align: center; width: 20%;">'.$row['day_name'].'</td>
                     <td style="text-align: center; width: 20%;">'.$row['tgl_ulangtahun'].'</td>
                     <!-- <td style="text-align: center; width: 30%;">Selamat ulang tahun...</td> -->
