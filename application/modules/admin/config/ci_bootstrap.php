@@ -128,7 +128,7 @@ $config['ci_bootstrap'] = array(
 		),
 		'configuration'=> array(
 			'name'		=> 'Konfigurasi Sistem',
-			'url'		=> 'admin',
+			'url'		=> 'configuration',
 			'icon'		=> 'fa fa-cog',
 			'children'	=> array(
 				'Peran Dalam Keluarga'	=> 'ref_role',
@@ -197,8 +197,9 @@ $config['ci_bootstrap'] = array(
 		'log'						=> array('webmaster', 'admin'),
 		'member/send_email'			=> array('webmaster', 'admin'),
 		'ref_recurrence'			=> array('webmaster', 'admin'),
-		'admin/ref_role'			=> array('webmaster', 'admin'),
-		'admin/ref_marriage'		=> array('webmaster', 'admin'),
+		'ref_role'					=> array('webmaster', 'admin'),
+		'ref_marriage'				=> array('webmaster', 'admin'),
+		'ref_activitie'				=> array('webmaster', 'admin'),
 		'activitie'					=> array('penjadwalan','admin'),
 		'pastor'					=> array('admin'),
 		'ref_gender'				=> array('admin'),
@@ -218,6 +219,9 @@ $config['ci_bootstrap'] = array(
 		'account/create'			=> array('admin'),
 		'ref_role'					=> array('admin'),
 		'ref_marriage'				=> array('admin'),
+		'video'						=> array('admin'),
+		'configuration'				=> array('admin'),
+		'scripture'					=> array('admin','pendoa'),
 	),
 
 	// AdminLTE settings
@@ -228,6 +232,7 @@ $config['ci_bootstrap'] = array(
 			'manager'	=> 'skin-black',
 			'staff'		=> 'skin-blue',
 			'penjadwalan'	=> 'skin-blue',
+			'pendoa'	=> 'skin-blue',
 		)
 	),
 
