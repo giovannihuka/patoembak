@@ -155,38 +155,32 @@ class Familie extends Admin_Controller
 
         $kolomhead = 0;
         xlsWriteLabel($tablehead, $kolomhead++, "No");
-	xlsWriteLabel($tablehead, $kolomhead++, "Head Fam Id");
-	xlsWriteLabel($tablehead, $kolomhead++, "Family Name");
-	xlsWriteLabel($tablehead, $kolomhead++, "Family Description");
-	xlsWriteLabel($tablehead, $kolomhead++, "Home Address");
-	xlsWriteLabel($tablehead, $kolomhead++, "Province Id");
-	xlsWriteLabel($tablehead, $kolomhead++, "Regency Id");
-	xlsWriteLabel($tablehead, $kolomhead++, "District Id");
-	xlsWriteLabel($tablehead, $kolomhead++, "Village Id");
-	xlsWriteLabel($tablehead, $kolomhead++, "Status Data");
-	xlsWriteLabel($tablehead, $kolomhead++, "Create Userid");
-	xlsWriteLabel($tablehead, $kolomhead++, "Update Userid");
-	xlsWriteLabel($tablehead, $kolomhead++, "Create Time");
-	xlsWriteLabel($tablehead, $kolomhead++, "Update Time");
+    	xlsWriteLabel($tablehead, $kolomhead++, "Head Fam Id");
+    	xlsWriteLabel($tablehead, $kolomhead++, "Family Name");
+    	xlsWriteLabel($tablehead, $kolomhead++, "Family Description");
+    	xlsWriteLabel($tablehead, $kolomhead++, "Home Address");
+    	xlsWriteLabel($tablehead, $kolomhead++, "Propinsi");
+    	xlsWriteLabel($tablehead, $kolomhead++, "Kabupaten");
+    	xlsWriteLabel($tablehead, $kolomhead++, "Kecamat");
+    	xlsWriteLabel($tablehead, $kolomhead++, "Kelurahan");
+    	xlsWriteLabel($tablehead, $kolomhead++, "Status Data");
+
 
 	foreach ($this->Familie_model->get_all() as $data) {
             $kolombody = 0;
 
             //ubah xlsWriteLabel menjadi xlsWriteNumber untuk kolom numeric
             xlsWriteNumber($tablebody, $kolombody++, $nourut);
-	    xlsWriteNumber($tablebody, $kolombody++, $data->head_fam_id);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->family_name);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->family_description);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->home_address);
-	    xlsWriteNumber($tablebody, $kolombody++, $data->province_id);
-	    xlsWriteNumber($tablebody, $kolombody++, $data->regency_id);
-	    xlsWriteNumber($tablebody, $kolombody++, $data->district_id);
-	    xlsWriteNumber($tablebody, $kolombody++, $data->village_id);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->status_data);
-	    xlsWriteNumber($tablebody, $kolombody++, $data->create_userid);
-	    xlsWriteNumber($tablebody, $kolombody++, $data->update_userid);
-	    xlsWriteNumber($tablebody, $kolombody++, $data->create_time);
-	    xlsWriteNumber($tablebody, $kolombody++, $data->update_time);
+    	    xlsWriteNumber($tablebody, $kolombody++, $data->head_fam_id);
+    	    xlsWriteLabel($tablebody, $kolombody++, $data->family_name);
+    	    xlsWriteLabel($tablebody, $kolombody++, $data->family_description);
+    	    xlsWriteLabel($tablebody, $kolombody++, $data->home_address);
+    	    xlsWriteNumber($tablebody, $kolombody++, $data->nama_propinsi);
+    	    xlsWriteNumber($tablebody, $kolombody++, $data->nama_kabupaten);
+    	    xlsWriteNumber($tablebody, $kolombody++, $data->nama_kecamatan);
+    	    xlsWriteNumber($tablebody, $kolombody++, $data->nama_kelurahan);
+    	    xlsWriteLabel($tablebody, $kolombody++, $data->status_data);
+
 
 	    $tablebody++;
             $nourut++;
