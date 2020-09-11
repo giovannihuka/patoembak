@@ -222,6 +222,9 @@ $config['ci_bootstrap'] = array(
 		'video'						=> array('admin'),
 		'configuration'				=> array('admin'),
 		'scripture'					=> array('admin','pendoa'),
+		'scripture/create'					=> array('admin','pendoa'),
+		'scripture/update'					=> array('admin','pendoa'),
+		// 'scripture/update'					=> array('admin','pendoa'),
 	),
 
 	// AdminLTE settings
