@@ -13,12 +13,12 @@ $(document).on({
 
         switch (ref_activityid) {
         	case '1':
-        		time_start.value = '08:00';
-        		time_end.value = '10:00';
+        		time_start.value = '09:00';
+        		time_end.value = '11:00';
         	break;
         	case '2':
-        		time_start.value = '08:00';
-        		time_end.value = '10:00';
+        		time_start.value = '09:00';
+        		time_end.value = '11:00';
         	break;
         	case '3':
         		time_start.value = '20:00';
@@ -37,8 +37,8 @@ $(document).on({
                 time_end.value = '21:00';
             break;
         	default:
-        		time_start.value = '08:00';
-        		time_end.value = '10:00';
+        		time_start.value = '09:00';
+        		time_end.value = '11:00';
 
         }
     }
